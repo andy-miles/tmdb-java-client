@@ -1,0 +1,55 @@
+{
+  "certifications": {
+    "Country 1": [
+      {
+        "certification": "Certification 1",
+        "meaning": "Meaning 1",
+        "order": 1
+      },
+      {
+        "certification": "Certification 2",
+        "meaning": "Meaning 2",
+        "order": 2
+      },
+      {
+        "certification": "Certification 3",
+        "meaning": "Meaning 3",
+        "order": 3
+      }
+    ],
+    "Country 2": [
+      {
+        "certification": "Certification 1",
+        "meaning": "Meaning 1",
+        "order": 1
+      },
+      {
+        "certification": "Certification 2",
+        "meaning": "Meaning 2",
+        "order": 2
+      },
+      {
+        "certification": "Certification 3",
+        "meaning": "Meaning 3",
+        "order": 3
+      }
+    ],
+    "Country 3": [
+      {
+        "certification": "Certification 1",
+        "meaning": "Meaning 1",
+        "order": 1
+      },
+      {
+        "certification": "Certification 2",
+        "meaning": "Meaning 2",
+        "order": 2
+      },
+      {
+        "certification": "Certification 3",
+        "meaning": "Meaning 3",
+        "order": 3
+      }
+    ]
+  }
+}

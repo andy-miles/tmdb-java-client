@@ -1,0 +1,37 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "description": "List Description 1",
+      "favorite_count": 4,
+      "item_count": 10,
+      "iso_639_1": "en",
+      "list_type": "List Type",
+      "poster_path": "/poster.jpg",
+      "name": "List 1",
+      "id": 1
+    },
+    {
+      "description": "List Description 2",
+      "favorite_count": 4,
+      "item_count": 10,
+      "iso_639_1": "en",
+      "list_type": "List Type",
+      "poster_path": "/poster.jpg",
+      "name": "List 2",
+      "id": 2
+    },
+    {
+      "description": "List Description 3",
+      "favorite_count": 4,
+      "item_count": 10,
+      "iso_639_1": "en",
+      "list_type": "List Type",
+      "poster_path": "/poster.jpg",
+      "name": "List 3",
+      "id": 3
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 3
+}

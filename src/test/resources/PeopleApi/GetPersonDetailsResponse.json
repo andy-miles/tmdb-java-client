@@ -1,0 +1,17 @@
+{
+  "adult": true,
+  "also_known_as": [
+    "Alias Value"
+  ],
+  "biography": "Biography Value",
+  "death_date": "2023-08-13",
+  "gender": 1,
+  "homepage": "https://homepage",
+  "imdb_id": "IMDB ID value",
+  "known_for_department": "actor",
+  "place_of_birth": "Dallas TX, USA",
+  "popularity": 0.73,
+  "profile_path": "/profile.jpg",
+  "name": "Person Name Value",
+  "id": 1
+}

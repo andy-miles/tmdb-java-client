@@ -1,0 +1,99 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop5.jpg",
+      "original_language": "en",
+      "original_title": "TV Series 5",
+      "overview": "Overview 5",
+      "poster_path": "/poster5.jpg",
+      "media_type": "Media Type",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "name": "TV Series 5",
+      "id": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop6.jpg",
+      "original_language": "en",
+      "original_title": "TV Series 6",
+      "overview": "Overview 6",
+      "poster_path": "/poster6.jpg",
+      "media_type": "Media Type",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "name": "TV Series 6",
+      "id": 6
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop7.jpg",
+      "original_language": "en",
+      "original_title": "TV Series 7",
+      "overview": "Overview 7",
+      "poster_path": "/poster7.jpg",
+      "media_type": "Media Type",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "name": "TV Series 7",
+      "id": 7
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop8.jpg",
+      "original_language": "en",
+      "original_title": "TV Series 8",
+      "overview": "Overview 8",
+      "poster_path": "/poster8.jpg",
+      "media_type": "Media Type",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "name": "TV Series 8",
+      "id": 8
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 4
+}

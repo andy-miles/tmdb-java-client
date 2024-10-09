@@ -1,0 +1,16 @@
+{
+  "avatar": {
+    "gravatar": {
+      "hash": "GravatarHashValue"
+    },
+    "tmdb": {
+      "avatar_path": "/AvatarPath.jpg"
+    }
+  },
+  "iso_639_1": "en",
+  "iso_3166_1": "US",
+  "name": "AccountNameValue",
+  "include_adult": false,
+  "username": "UsernameValue",
+  "id": 1
+}

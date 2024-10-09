@@ -1,0 +1,45 @@
+{
+  "logos": [
+    {
+      "id": "ID_1",
+      "aspect_ratio": 3.03951367781155,
+      "file_path": "/imagePath.jpg",
+      "height": 329,
+      "file_type": ".jpg",
+      "vote_average": 0.5,
+      "vote_count": 10,
+      "width": 1000
+    },
+    {
+      "id": "ID_2",
+      "aspect_ratio": 3.03951367781155,
+      "file_path": "/imagePath.jpg",
+      "height": 329,
+      "file_type": ".jpg",
+      "vote_average": 0.5,
+      "vote_count": 10,
+      "width": 1000
+    },
+    {
+      "id": "ID_3",
+      "aspect_ratio": 3.03951367781155,
+      "file_path": "/imagePath.jpg",
+      "height": 329,
+      "file_type": ".jpg",
+      "vote_average": 0.5,
+      "vote_count": 10,
+      "width": 1000
+    },
+    {
+      "id": "ID_4",
+      "aspect_ratio": 3.03951367781155,
+      "file_path": "/imagePath.jpg",
+      "height": 329,
+      "file_type": ".jpg",
+      "vote_average": 0.5,
+      "vote_count": 10,
+      "width": 1000
+    }
+  ],
+  "id": 1
+}

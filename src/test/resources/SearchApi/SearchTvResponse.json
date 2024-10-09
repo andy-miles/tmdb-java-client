@@ -1,0 +1,99 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop1.jpg",
+      "original_language": "en",
+      "original_name": "TV Series 1",
+      "overview": "Overview 1",
+      "poster_path": "/poster1.jpg",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "media_type": "tv",
+      "name": "TV Series 1",
+      "id": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop2.jpg",
+      "original_language": "en",
+      "original_name": "TV Series 2",
+      "overview": "Overview 2",
+      "poster_path": "/poster2.jpg",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "media_type": "tv",
+      "name": "TV Series 2",
+      "id": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop3.jpg",
+      "original_language": "en",
+      "original_name": "TV Series 3",
+      "overview": "Overview 3",
+      "poster_path": "/poster3.jpg",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "media_type": "tv",
+      "name": "TV Series 3",
+      "id": 3
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop4.jpg",
+      "original_language": "en",
+      "original_name": "TV Series 4",
+      "overview": "Overview 4",
+      "poster_path": "/poster4.jpg",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "media_type": "tv",
+      "name": "TV Series 4",
+      "id": 4
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 4
+}

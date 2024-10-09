@@ -1,0 +1,160 @@
+{
+  "cast": [
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop1.jpg",
+      "genre_ids": [
+        3,
+        4,
+        5
+      ],
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "Original Language 1",
+      "original_name": "Original Name 1",
+      "overview": "Overview 1",
+      "popularity": 0.4,
+      "poster_path": "/poster1.jpg",
+      "first_air_date": "2010-04-07",
+      "vote_average": 0.6,
+      "vote_count": 103,
+      "character": "Character 1",
+      "credit_id": "CreditId1",
+      "episode_count": 12,
+      "name": "TvCastCredit 1",
+      "id": 1
+    },
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop2.jpg",
+      "genre_ids": [
+        5,
+        7,
+        9
+      ],
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "Original Language 2",
+      "original_name": "Original Name 2",
+      "overview": "Overview 2",
+      "popularity": 0.8,
+      "poster_path": "/poster2.jpg",
+      "first_air_date": "2010-04-07",
+      "vote_average": 1.2,
+      "vote_count": 206,
+      "character": "Character 2",
+      "credit_id": "CreditId2",
+      "episode_count": 12,
+      "name": "TvCastCredit 2",
+      "id": 2
+    },
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop3.jpg",
+      "genre_ids": [
+        7,
+        10,
+        13
+      ],
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "Original Language 3",
+      "original_name": "Original Name 3",
+      "overview": "Overview 3",
+      "popularity": 1.2000000000000002,
+      "poster_path": "/poster3.jpg",
+      "first_air_date": "2010-04-07",
+      "vote_average": 1.7999999999999998,
+      "vote_count": 309,
+      "character": "Character 3",
+      "credit_id": "CreditId3",
+      "episode_count": 12,
+      "name": "TvCastCredit 3",
+      "id": 3
+    }
+  ],
+  "crew": [
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop1.jpg",
+      "genre_ids": [
+        6,
+        7,
+        8
+      ],
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "Original Language 1",
+      "original_name": "Original Name 1",
+      "overview": "Overview 1",
+      "popularity": 0.4,
+      "poster_path": "/poster1.jpg",
+      "first_air_date": "2010-04-07",
+      "vote_average": 0.6,
+      "vote_count": 103,
+      "credit_id": "CreditId1",
+      "department": "Department 1",
+      "episode_count": 12,
+      "job": "Job 1",
+      "name": "TvCastCredit 1",
+      "id": 1
+    },
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop2.jpg",
+      "genre_ids": [
+        9,
+        11,
+        13
+      ],
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "Original Language 2",
+      "original_name": "Original Name 2",
+      "overview": "Overview 2",
+      "popularity": 0.8,
+      "poster_path": "/poster2.jpg",
+      "first_air_date": "2010-04-07",
+      "vote_average": 1.2,
+      "vote_count": 206,
+      "credit_id": "CreditId2",
+      "department": "Department 2",
+      "episode_count": 12,
+      "job": "Job 2",
+      "name": "TvCastCredit 2",
+      "id": 2
+    },
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop3.jpg",
+      "genre_ids": [
+        12,
+        15,
+        18
+      ],
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "Original Language 3",
+      "original_name": "Original Name 3",
+      "overview": "Overview 3",
+      "popularity": 1.2000000000000002,
+      "poster_path": "/poster3.jpg",
+      "first_air_date": "2010-04-07",
+      "vote_average": 1.7999999999999998,
+      "vote_count": 309,
+      "credit_id": "CreditId3",
+      "department": "Department 3",
+      "episode_count": 12,
+      "job": "Job 3",
+      "name": "TvCastCredit 3",
+      "id": 3
+    }
+  ],
+  "id": 1
+}

@@ -1,0 +1,62 @@
+{
+  "id": "CreditIdValue",
+  "credit_type": "cast",
+  "department": "Acting",
+  "job": "Actor",
+  "media": {
+    "adult": false,
+    "backdrop_path": "/backdrop.jpg",
+    "name": "Media Name",
+    "original_language": "en",
+    "original_name": "Name",
+    "overview": "Summary",
+    "poster_path": "/poster.jpg",
+    "media_type": "tv",
+    "genre_ids": [
+      1,
+      2
+    ],
+    "popularity": 0.93,
+    "first_air_date": "2004-09-15",
+    "vote_average": 88.0,
+    "vote_count": 500,
+    "origin_country": [
+      "US"
+    ],
+    "character": "Character Name",
+    "seasons": [
+      {
+        "air_date": "2022-01-02",
+        "episode_count": 12,
+        "name": "Season 1",
+        "overview": "Overview 1",
+        "poster_path": "/poster.jpg",
+        "season_number": 1,
+        "show_id": 100,
+        "id": 1
+      },
+      {
+        "air_date": "2022-01-02",
+        "episode_count": 12,
+        "name": "Season 2",
+        "overview": "Overview 2",
+        "poster_path": "/poster.jpg",
+        "season_number": 2,
+        "show_id": 100,
+        "id": 1
+      }
+    ],
+    "id": 1
+  },
+  "person": {
+    "adult": true,
+    "name": "Person Name",
+    "original_name": "Original Name",
+    "media_type": "person",
+    "popularity": 100.0,
+    "gender": 1,
+    "known_for_department": "Acting",
+    "profile_path": "/profile.jpg",
+    "id": 1
+  }
+}

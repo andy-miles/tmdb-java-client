@@ -1,0 +1,178 @@
+{
+  "cast": [
+    {
+      "roles": [
+        {
+          "credit_id": "Role Credit ID 5",
+          "character": "Character 5",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Role Credit ID 6",
+          "character": "Character 6",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Role Credit ID 7",
+          "character": "Character 7",
+          "episode_count": 12
+        }
+      ],
+      "total_episode_count": 12,
+      "order": 1,
+      "adult": true,
+      "original_name": "Original Name 1",
+      "popularity": 0.12,
+      "gender": 1,
+      "known_for_department": "Department 1",
+      "profile_path": "/profile1.png",
+      "name": "Aggregate Cast Credit 1",
+      "id": 1
+    },
+    {
+      "roles": [
+        {
+          "credit_id": "Role Credit ID 10",
+          "character": "Character 10",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Role Credit ID 11",
+          "character": "Character 11",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Role Credit ID 12",
+          "character": "Character 12",
+          "episode_count": 12
+        }
+      ],
+      "total_episode_count": 12,
+      "order": 2,
+      "adult": true,
+      "original_name": "Original Name 2",
+      "popularity": 0.24,
+      "gender": 1,
+      "known_for_department": "Department 2",
+      "profile_path": "/profile2.png",
+      "name": "Aggregate Cast Credit 2",
+      "id": 2
+    },
+    {
+      "roles": [
+        {
+          "credit_id": "Role Credit ID 15",
+          "character": "Character 15",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Role Credit ID 16",
+          "character": "Character 16",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Role Credit ID 17",
+          "character": "Character 17",
+          "episode_count": 12
+        }
+      ],
+      "total_episode_count": 12,
+      "order": 3,
+      "adult": true,
+      "original_name": "Original Name 3",
+      "popularity": 0.36,
+      "gender": 1,
+      "known_for_department": "Department 3",
+      "profile_path": "/profile3.png",
+      "name": "Aggregate Cast Credit 3",
+      "id": 3
+    }
+  ],
+  "crew": [
+    {
+      "jobs": [
+        {
+          "credit_id": "Job Credit ID 5",
+          "job": "Job 5",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Job Credit ID 6",
+          "job": "Job 6",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Job Credit ID 7",
+          "job": "Job 7",
+          "episode_count": 12
+        }
+      ],
+      "total_episode_count": 12,
+      "adult": true,
+      "original_name": "Original Name 1",
+      "popularity": 0.1,
+      "gender": 1,
+      "known_for_department": "Department 1",
+      "profile_path": "/profile1.png",
+      "name": "Aggregate Crew Credit 1",
+      "id": 1
+    },
+    {
+      "jobs": [
+        {
+          "credit_id": "Job Credit ID 10",
+          "job": "Job 10",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Job Credit ID 11",
+          "job": "Job 11",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Job Credit ID 12",
+          "job": "Job 12",
+          "episode_count": 12
+        }
+      ],
+      "total_episode_count": 12,
+      "adult": true,
+      "original_name": "Original Name 2",
+      "popularity": 0.2,
+      "gender": 1,
+      "known_for_department": "Department 2",
+      "profile_path": "/profile2.png",
+      "name": "Aggregate Crew Credit 2",
+      "id": 2
+    },
+    {
+      "jobs": [
+        {
+          "credit_id": "Job Credit ID 15",
+          "job": "Job 15",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Job Credit ID 16",
+          "job": "Job 16",
+          "episode_count": 12
+        },
+        {
+          "credit_id": "Job Credit ID 17",
+          "job": "Job 17",
+          "episode_count": 12
+        }
+      ],
+      "total_episode_count": 12,
+      "adult": true,
+      "original_name": "Original Name 3",
+      "popularity": 0.30000000000000004,
+      "gender": 1,
+      "known_for_department": "Department 3",
+      "profile_path": "/profile3.png",
+      "name": "Aggregate Crew Credit 3",
+      "id": 3
+    }
+  ],
+  "id": 600
+}

@@ -1,0 +1,99 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop13.jpg",
+      "original_language": "en",
+      "original_title": "TV Series 13",
+      "overview": "Overview 13",
+      "poster_path": "/poster13.jpg",
+      "media_type": "Media Type",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "name": "TV Series 13",
+      "id": 13
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop14.jpg",
+      "original_language": "en",
+      "original_title": "TV Series 14",
+      "overview": "Overview 14",
+      "poster_path": "/poster14.jpg",
+      "media_type": "Media Type",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "name": "TV Series 14",
+      "id": 14
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop15.jpg",
+      "original_language": "en",
+      "original_title": "TV Series 15",
+      "overview": "Overview 15",
+      "poster_path": "/poster15.jpg",
+      "media_type": "Media Type",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "name": "TV Series 15",
+      "id": 15
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop16.jpg",
+      "original_language": "en",
+      "original_title": "TV Series 16",
+      "overview": "Overview 16",
+      "poster_path": "/poster16.jpg",
+      "media_type": "Media Type",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "name": "TV Series 16",
+      "id": 16
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 4
+}

@@ -1,0 +1,131 @@
+{
+  "results": {
+    "DE": {
+      "link": "https://someurl/provider/2",
+      "flatrate": [
+        {
+          "logo_path": "/logo1.jpg",
+          "provider_id": 1,
+          "provider_name": "Provider 1",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo2.jpg",
+          "provider_id": 2,
+          "provider_name": "Provider 2",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo3.jpg",
+          "provider_id": 3,
+          "provider_name": "Provider 3",
+          "display_priority": 5
+        }
+      ],
+      "rent": [
+        {
+          "logo_path": "/logo1.jpg",
+          "provider_id": 1,
+          "provider_name": "Provider 1",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo2.jpg",
+          "provider_id": 2,
+          "provider_name": "Provider 2",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo3.jpg",
+          "provider_id": 3,
+          "provider_name": "Provider 3",
+          "display_priority": 5
+        }
+      ],
+      "buy": [
+        {
+          "logo_path": "/logo1.jpg",
+          "provider_id": 1,
+          "provider_name": "Provider 1",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo2.jpg",
+          "provider_id": 2,
+          "provider_name": "Provider 2",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo3.jpg",
+          "provider_id": 3,
+          "provider_name": "Provider 3",
+          "display_priority": 5
+        }
+      ]
+    },
+    "US": {
+      "link": "https://someurl/provider/1",
+      "flatrate": [
+        {
+          "logo_path": "/logo1.jpg",
+          "provider_id": 1,
+          "provider_name": "Provider 1",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo2.jpg",
+          "provider_id": 2,
+          "provider_name": "Provider 2",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo3.jpg",
+          "provider_id": 3,
+          "provider_name": "Provider 3",
+          "display_priority": 5
+        }
+      ],
+      "rent": [
+        {
+          "logo_path": "/logo1.jpg",
+          "provider_id": 1,
+          "provider_name": "Provider 1",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo2.jpg",
+          "provider_id": 2,
+          "provider_name": "Provider 2",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo3.jpg",
+          "provider_id": 3,
+          "provider_name": "Provider 3",
+          "display_priority": 5
+        }
+      ],
+      "buy": [
+        {
+          "logo_path": "/logo1.jpg",
+          "provider_id": 1,
+          "provider_name": "Provider 1",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo2.jpg",
+          "provider_id": 2,
+          "provider_name": "Provider 2",
+          "display_priority": 5
+        },
+        {
+          "logo_path": "/logo3.jpg",
+          "provider_id": 3,
+          "provider_name": "Provider 3",
+          "display_priority": 5
+        }
+      ]
+    }
+  },
+  "id": 1
+}

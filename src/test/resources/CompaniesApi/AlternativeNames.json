@@ -1,0 +1,17 @@
+{
+  "results": [
+    {
+      "name": "Alternate Name 1",
+      "type": "Type 1"
+    },
+    {
+      "name": "Alternate Name 2",
+      "type": "Type 2"
+    },
+    {
+      "name": "Alternate Name 3",
+      "type": "Type 3"
+    }
+  ],
+  "id": 1
+}

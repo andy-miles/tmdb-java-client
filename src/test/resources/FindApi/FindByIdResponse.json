@@ -1,0 +1,452 @@
+{
+  "movie_results": [
+    {
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop1.jpg",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "original_language": "en",
+      "original_title": "Original Movie Title 1",
+      "overview": "Overview for movie 1",
+      "popularity": 0.6,
+      "poster_path": "/poster1.jpg",
+      "release_date": "2024-05-15",
+      "title": "Movie Title 1",
+      "video": false,
+      "vote_average": 0.55,
+      "vote_count": 100,
+      "id": 1
+    },
+    {
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop2.jpg",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "original_language": "en",
+      "original_title": "Original Movie Title 2",
+      "overview": "Overview for movie 2",
+      "popularity": 0.6,
+      "poster_path": "/poster2.jpg",
+      "release_date": "2024-05-15",
+      "title": "Movie Title 2",
+      "video": false,
+      "vote_average": 0.55,
+      "vote_count": 100,
+      "id": 2
+    }
+  ],
+  "person_results": [
+    {
+      "know_for": [
+        {
+          "original_title": "Original Title 1",
+          "release_date": "2007-07-08",
+          "title": "Title 1",
+          "video": false,
+          "adult": true,
+          "backdrop_path": "/backdrop1.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 1",
+          "popularity": 134.0,
+          "poster_path": "/poster1.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "movie"
+        },
+        {
+          "original_title": "Original Title 2",
+          "release_date": "2007-07-08",
+          "title": "Title 2",
+          "video": false,
+          "adult": true,
+          "backdrop_path": "/backdrop2.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 2",
+          "popularity": 134.0,
+          "poster_path": "/poster2.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "movie"
+        },
+        {
+          "original_title": "Original Title 3",
+          "release_date": "2007-07-08",
+          "title": "Title 3",
+          "video": false,
+          "adult": true,
+          "backdrop_path": "/backdrop3.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 3",
+          "popularity": 134.0,
+          "poster_path": "/poster3.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "movie"
+        },
+        {
+          "name": "TV Series Name 4",
+          "original_name": "Original Name 4",
+          "first_air_date": "2012-03-04",
+          "adult": true,
+          "backdrop_path": "/backdrop4.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 4",
+          "popularity": 134.0,
+          "poster_path": "/poster4.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "tv"
+        },
+        {
+          "name": "TV Series Name 5",
+          "original_name": "Original Name 5",
+          "first_air_date": "2012-03-04",
+          "adult": true,
+          "backdrop_path": "/backdrop5.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 5",
+          "popularity": 134.0,
+          "poster_path": "/poster5.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "tv"
+        },
+        {
+          "original_title": "Original Title 6",
+          "release_date": "2007-07-08",
+          "title": "Title 6",
+          "video": false,
+          "adult": true,
+          "backdrop_path": "/backdrop6.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 6",
+          "popularity": 134.0,
+          "poster_path": "/poster6.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "movie"
+        }
+      ],
+      "media_type": "person",
+      "adult": true,
+      "original_name": "Original Name 1",
+      "popularity": 100.0,
+      "gender": 1,
+      "known_for_department": "acting",
+      "profile_path": "/profile1.jpg",
+      "name": "Person 1",
+      "id": 1
+    },
+    {
+      "know_for": [
+        {
+          "original_title": "Original Title 1",
+          "release_date": "2007-07-08",
+          "title": "Title 1",
+          "video": false,
+          "adult": true,
+          "backdrop_path": "/backdrop1.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 1",
+          "popularity": 134.0,
+          "poster_path": "/poster1.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "movie"
+        },
+        {
+          "original_title": "Original Title 2",
+          "release_date": "2007-07-08",
+          "title": "Title 2",
+          "video": false,
+          "adult": true,
+          "backdrop_path": "/backdrop2.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 2",
+          "popularity": 134.0,
+          "poster_path": "/poster2.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "movie"
+        },
+        {
+          "original_title": "Original Title 3",
+          "release_date": "2007-07-08",
+          "title": "Title 3",
+          "video": false,
+          "adult": true,
+          "backdrop_path": "/backdrop3.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 3",
+          "popularity": 134.0,
+          "poster_path": "/poster3.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "movie"
+        },
+        {
+          "name": "TV Series Name 4",
+          "original_name": "Original Name 4",
+          "first_air_date": "2012-03-04",
+          "adult": true,
+          "backdrop_path": "/backdrop4.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 4",
+          "popularity": 134.0,
+          "poster_path": "/poster4.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "tv"
+        },
+        {
+          "name": "TV Series Name 5",
+          "original_name": "Original Name 5",
+          "first_air_date": "2012-03-04",
+          "adult": true,
+          "backdrop_path": "/backdrop5.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 5",
+          "popularity": 134.0,
+          "poster_path": "/poster5.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "tv"
+        },
+        {
+          "original_title": "Original Title 6",
+          "release_date": "2007-07-08",
+          "title": "Title 6",
+          "video": false,
+          "adult": true,
+          "backdrop_path": "/backdrop6.jpg",
+          "genre_ids": [
+            10,
+            15,
+            20
+          ],
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "overview": "Overview 6",
+          "popularity": 134.0,
+          "poster_path": "/poster6.jpg",
+          "vote_average": 87.3,
+          "vote_count": 2000,
+          "media_type": "movie"
+        }
+      ],
+      "media_type": "person",
+      "adult": true,
+      "original_name": "Original Name 2",
+      "popularity": 100.0,
+      "gender": 1,
+      "known_for_department": "acting",
+      "profile_path": "/profile2.jpg",
+      "name": "Person 2",
+      "id": 2
+    }
+  ],
+  "tv_results": [
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop1.jpg",
+      "original_language": "en",
+      "original_name": "TV Series 1",
+      "overview": "Overview 1",
+      "poster_path": "/poster1.jpg",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "media_type": "tv",
+      "name": "TV Series 1",
+      "id": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop2.jpg",
+      "original_language": "en",
+      "original_name": "TV Series 2",
+      "overview": "Overview 2",
+      "poster_path": "/poster2.jpg",
+      "genre_ids": [
+        1,
+        4,
+        10
+      ],
+      "popularity": 0.78,
+      "first_air_date": "2014-05-06",
+      "vote_average": 0.82,
+      "vote_count": 3000,
+      "origin_country": [
+        "US"
+      ],
+      "media_type": "tv",
+      "name": "TV Series 2",
+      "id": 2
+    }
+  ],
+  "tv_episode_results": [
+    {
+      "media_type": "tv_episode",
+      "show_id": "Show ID Value",
+      "air_date": "2014-02-01",
+      "episode_number": 1,
+      "overview": "Overview 1",
+      "production_code": "Production Code 1",
+      "runtime": 22,
+      "season_number": 2,
+      "still_path": "/still1.jpg",
+      "vote_average": 128.3,
+      "vote_count": 5000,
+      "name": "Episode 1",
+      "id": 1
+    },
+    {
+      "media_type": "tv_episode",
+      "show_id": "Show ID Value",
+      "air_date": "2014-02-02",
+      "episode_number": 2,
+      "overview": "Overview 2",
+      "production_code": "Production Code 2",
+      "runtime": 22,
+      "season_number": 2,
+      "still_path": "/still2.jpg",
+      "vote_average": 128.3,
+      "vote_count": 5000,
+      "name": "Episode 2",
+      "id": 2
+    }
+  ],
+  "tv_season_results": [
+    {
+      "overview": "Season Overview 1",
+      "poster_path": "/poster1.jpg",
+      "media_type": "tv_season",
+      "vote_average": 103.2,
+      "air_date": "2023-09-12",
+      "season_number": 1,
+      "show_id": 100,
+      "episode_count": 12,
+      "name": "Season 1",
+      "id": 1
+    },
+    {
+      "overview": "Season Overview 2",
+      "poster_path": "/poster2.jpg",
+      "media_type": "tv_season",
+      "vote_average": 103.2,
+      "air_date": "2023-09-12",
+      "season_number": 2,
+      "show_id": 100,
+      "episode_count": 12,
+      "name": "Season 2",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "author": "Jon Smith",
+  "author_details": {
+    "name": "Jon Smith",
+    "username": "jonsmith",
+    "avatar_path": "/jonsmith.png",
+    "rating": 7
+  },
+  "content": "The review content.",
+  "created_at": "2024-05-03 14:23:30 UTC",
+  "iso_639_1": "en",
+  "media_id": 1000,
+  "media_title": "Some Movie",
+  "media_type": "movie",
+  "updated_at": "2024-05-15 09:12:00 UTC",
+  "url": "https://www.themoviedb.org/review/ReviewIdValue",
+  "id": "ReviewIdValue"
+}

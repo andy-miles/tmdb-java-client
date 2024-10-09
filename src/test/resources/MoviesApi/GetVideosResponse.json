@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "iso_639_1": "en",
+      "iso_3166_1": "US",
+      "name": "Video Name 1",
+      "key": "Key_1",
+      "site": "Site 1",
+      "size": 1080,
+      "type": "Type 1",
+      "official": true,
+      "published_at": "2020-02-22 08:00:00 UTC",
+      "id": "Video_1"
+    },
+    {
+      "iso_639_1": "en",
+      "iso_3166_1": "US",
+      "name": "Video Name 2",
+      "key": "Key_2",
+      "site": "Site 2",
+      "size": 1080,
+      "type": "Type 2",
+      "official": true,
+      "published_at": "2020-02-22 08:00:00 UTC",
+      "id": "Video_2"
+    },
+    {
+      "iso_639_1": "en",
+      "iso_3166_1": "US",
+      "name": "Video Name 3",
+      "key": "Key_3",
+      "site": "Site 3",
+      "size": 1080,
+      "type": "Type 3",
+      "official": true,
+      "published_at": "2020-02-22 08:00:00 UTC",
+      "id": "Video_3"
+    }
+  ],
+  "id": 1
+}

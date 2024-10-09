@@ -1,0 +1,67 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "original_title": "Original Title 1",
+      "release_date": "2000-06-07",
+      "title": "Movie 1",
+      "video": false,
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "genre_ids": [
+        5,
+        6,
+        7
+      ],
+      "original_language": "en",
+      "overview": "Movie Overview 1",
+      "popularity": 0.7,
+      "poster_path": "/poster.jpg",
+      "vote_average": 0.6,
+      "vote_count": 1000,
+      "id": 1
+    },
+    {
+      "original_title": "Original Title 2",
+      "release_date": "2000-06-07",
+      "title": "Movie 2",
+      "video": false,
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "genre_ids": [
+        5,
+        6,
+        7
+      ],
+      "original_language": "en",
+      "overview": "Movie Overview 2",
+      "popularity": 0.7,
+      "poster_path": "/poster.jpg",
+      "vote_average": 0.6,
+      "vote_count": 1000,
+      "id": 2
+    },
+    {
+      "original_title": "Original Title 3",
+      "release_date": "2000-06-07",
+      "title": "Movie 3",
+      "video": false,
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "genre_ids": [
+        5,
+        6,
+        7
+      ],
+      "original_language": "en",
+      "overview": "Movie Overview 3",
+      "popularity": 0.7,
+      "poster_path": "/poster.jpg",
+      "vote_average": 0.6,
+      "vote_count": 1000,
+      "id": 3
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 3
+}

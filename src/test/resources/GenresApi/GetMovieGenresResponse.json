@@ -1,0 +1,52 @@
+{
+  "genres": [
+    {
+      "name": "Genre 1",
+      "id": 1
+    },
+    {
+      "name": "Genre 2",
+      "id": 2
+    },
+    {
+      "name": "Genre 3",
+      "id": 3
+    },
+    {
+      "name": "Genre 4",
+      "id": 4
+    },
+    {
+      "name": "Genre 5",
+      "id": 5
+    },
+    {
+      "name": "Genre 6",
+      "id": 6
+    },
+    {
+      "name": "Genre 7",
+      "id": 7
+    },
+    {
+      "name": "Genre 8",
+      "id": 8
+    },
+    {
+      "name": "Genre 9",
+      "id": 9
+    },
+    {
+      "name": "Genre 10",
+      "id": 10
+    },
+    {
+      "name": "Genre 11",
+      "id": 11
+    },
+    {
+      "name": "Genre 12",
+      "id": 12
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "cast": [
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop1.jpg",
+      "genre_ids": [
+        5,
+        9,
+        14
+      ],
+      "original_language": "Original Language",
+      "original_title": "Original Title 1",
+      "overview": "Overview 1",
+      "popularity": 0.4,
+      "poster_path": "/poster1.jpg",
+      "release_date": "2020-04-05",
+      "title": "Title 1",
+      "video": false,
+      "vote_average": 0.6,
+      "vote_count": 100,
+      "character": "Character 1",
+      "order": 1,
+      "media_type": "movie",
+      "id": 1
+    },
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop2.jpg",
+      "genre_ids": [
+        5,
+        9,
+        14
+      ],
+      "original_language": "Original Language",
+      "original_title": "Original Title 2",
+      "overview": "Overview 2",
+      "popularity": 0.8,
+      "poster_path": "/poster2.jpg",
+      "release_date": "2020-04-05",
+      "title": "Title 2",
+      "video": false,
+      "vote_average": 1.2,
+      "vote_count": 100,
+      "character": "Character 2",
+      "order": 2,
+      "media_type": "movie",
+      "id": 2
+    },
+    {
+      "adult": true,
+      "backdrop_path": "/backdrop3.jpg",
+      "genre_ids": [
+        5,
+        9,
+        14
+      ],
+      "original_language": "Original Language",
+      "original_title": "Original Title 3",
+      "overview": "Overview 3",
+      "popularity": 1.2000000000000002,
+      "poster_path": "/poster3.jpg",
+      "release_date": "2020-04-05",
+      "title": "Title 3",
+      "video": false,
+      "vote_average": 1.7999999999999998,
+      "vote_count": 100,
+      "character": "Character 3",
+      "order": 3,
+      "media_type": "movie",
+      "id": 3
+    }
+  ],
+  "crew": [
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop1.jpg",
+      "genre_ids": [
+        5,
+        9,
+        14
+      ],
+      "original_language": "Original Language",
+      "original_title": "Original Title 1",
+      "overview": "Overview 1",
+      "popularity": 0.3,
+      "poster_path": "/poster1.jpg",
+      "release_date": "2020-04-05",
+      "title": "Title 1",
+      "video": false,
+      "vote_average": 0.7,
+      "vote_count": 200,
+      "credit_id": "CreditId1",
+      "department": "Department 1",
+      "job": "Job 1",
+      "media_type": "movie",
+      "id": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop2.jpg",
+      "genre_ids": [
+        5,
+        9,
+        14
+      ],
+      "original_language": "Original Language",
+      "original_title": "Original Title 2",
+      "overview": "Overview 2",
+      "popularity": 0.6,
+      "poster_path": "/poster2.jpg",
+      "release_date": "2020-04-05",
+      "title": "Title 2",
+      "video": false,
+      "vote_average": 1.4,
+      "vote_count": 200,
+      "credit_id": "CreditId2",
+      "department": "Department 2",
+      "job": "Job 2",
+      "media_type": "movie",
+      "id": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop3.jpg",
+      "genre_ids": [
+        5,
+        9,
+        14
+      ],
+      "original_language": "Original Language",
+      "original_title": "Original Title 3",
+      "overview": "Overview 3",
+      "popularity": 0.8999999999999999,
+      "poster_path": "/poster3.jpg",
+      "release_date": "2020-04-05",
+      "title": "Title 3",
+      "video": false,
+      "vote_average": 2.0999999999999996,
+      "vote_count": 200,
+      "credit_id": "CreditId3",
+      "department": "Department 3",
+      "job": "Job 3",
+      "media_type": "movie",
+      "id": 3
+    }
+  ],
+  "id": 1
+}

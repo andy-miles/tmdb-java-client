@@ -1,0 +1,38 @@
+{
+  "translations": [
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "English 1",
+      "english_name": "English 1",
+      "data": {
+        "title": "Title 1",
+        "overview": "Summary 1",
+        "homepage": "https://someurl.com"
+      }
+    },
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "English 2",
+      "english_name": "English 2",
+      "data": {
+        "title": "Title 2",
+        "overview": "Summary 2",
+        "homepage": "https://someurl.com"
+      }
+    },
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "English 3",
+      "english_name": "English 3",
+      "data": {
+        "title": "Title 3",
+        "overview": "Summary 3",
+        "homepage": "https://someurl.com"
+      }
+    }
+  ],
+  "id": 1
+}

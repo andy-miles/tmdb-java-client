@@ -1,0 +1,44 @@
+{
+  "translations": [
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 1",
+      "english_name": "English name 1",
+      "data": {
+        "homepage": "https://somewebpage.com/1",
+        "overview": "Translation Overview 1",
+        "runtime": 83,
+        "tagline": "Tagline 1",
+        "title": "Title 1"
+      }
+    },
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 2",
+      "english_name": "English name 2",
+      "data": {
+        "homepage": "https://somewebpage.com/2",
+        "overview": "Translation Overview 2",
+        "runtime": 83,
+        "tagline": "Tagline 2",
+        "title": "Title 2"
+      }
+    },
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 3",
+      "english_name": "English name 3",
+      "data": {
+        "homepage": "https://somewebpage.com/3",
+        "overview": "Translation Overview 3",
+        "runtime": 83,
+        "tagline": "Tagline 3",
+        "title": "Title 3"
+      }
+    }
+  ],
+  "id": 1
+}

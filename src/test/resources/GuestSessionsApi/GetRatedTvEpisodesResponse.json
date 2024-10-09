@@ -1,0 +1,52 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "air_date": "2020-06-01",
+      "episode_number": 1,
+      "overview": "Episode Overview 1",
+      "production_code": "Production Code 1",
+      "runtime": 22,
+      "season_number": 1,
+      "show_id": 100,
+      "still_path": "/stills1",
+      "vote_average": 0.65,
+      "vote_count": 500,
+      "rating": 80,
+      "name": "TV Episode 1",
+      "id": 1
+    },
+    {
+      "air_date": "2020-06-01",
+      "episode_number": 2,
+      "overview": "Episode Overview 2",
+      "production_code": "Production Code 2",
+      "runtime": 22,
+      "season_number": 1,
+      "show_id": 100,
+      "still_path": "/stills2",
+      "vote_average": 0.65,
+      "vote_count": 500,
+      "rating": 80,
+      "name": "TV Episode 2",
+      "id": 2
+    },
+    {
+      "air_date": "2020-06-01",
+      "episode_number": 3,
+      "overview": "Episode Overview 3",
+      "production_code": "Production Code 3",
+      "runtime": 22,
+      "season_number": 1,
+      "show_id": 100,
+      "still_path": "/stills3",
+      "vote_average": 0.65,
+      "vote_count": 500,
+      "rating": 80,
+      "name": "TV Episode 3",
+      "id": 3
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 3
+}

@@ -1,0 +1,70 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop1.jpg",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "original_language": "en",
+      "original_title": "Original Movie Title 1",
+      "overview": "Overview for movie 1",
+      "popularity": 0.6,
+      "poster_path": "/poster1.jpg",
+      "release_date": "2024-05-15",
+      "title": "Movie Title 1",
+      "video": false,
+      "vote_average": 0.55,
+      "vote_count": 100,
+      "id": 1
+    },
+    {
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop2.jpg",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "original_language": "en",
+      "original_title": "Original Movie Title 2",
+      "overview": "Overview for movie 2",
+      "popularity": 0.6,
+      "poster_path": "/poster2.jpg",
+      "release_date": "2024-05-15",
+      "title": "Movie Title 2",
+      "video": false,
+      "vote_average": 0.55,
+      "vote_count": 100,
+      "id": 2
+    },
+    {
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop3.jpg",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "original_language": "en",
+      "original_title": "Original Movie Title 3",
+      "overview": "Overview for movie 3",
+      "popularity": 0.6,
+      "poster_path": "/poster3.jpg",
+      "release_date": "2024-05-15",
+      "title": "Movie Title 3",
+      "video": false,
+      "vote_average": 0.55,
+      "vote_count": 100,
+      "id": 3
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 3
+}

@@ -1,0 +1,52 @@
+{
+  "images": {
+    "base_url": "http://somebaseurl.com",
+    "secure_base_url": "https://somebaseurl.com",
+    "backdrop_sizes": [
+      "backdrop 1",
+      "backdrop 2",
+      "backdrop 3",
+      "backdrop 4",
+      "backdrop 5"
+    ],
+    "logo_sizes": [
+      "logo 1",
+      "logo 2",
+      "logo 3",
+      "logo 4"
+    ],
+    "poster_sizes": [
+      "poster 1",
+      "poster 2",
+      "poster 3"
+    ],
+    "profile_sizes": [
+      "profile 1",
+      "profile 2"
+    ],
+    "still_sizes": [
+      "still 1",
+      "still 2",
+      "still 3",
+      "still 4",
+      "still 5",
+      "still 6",
+      "still 7",
+      "still 8"
+    ]
+  },
+  "change_keys": [
+    "change key 1",
+    "change key 2",
+    "change key 3",
+    "change key 4",
+    "change key 5",
+    "change key 6",
+    "change key 7",
+    "change key 8",
+    "change key 9",
+    "change key 10",
+    "change key 11",
+    "change key 12"
+  ]
+}

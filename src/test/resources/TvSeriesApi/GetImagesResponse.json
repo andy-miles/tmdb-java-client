@@ -1,0 +1,90 @@
+{
+  "backdrops": [
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image1.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    },
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image2.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    },
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image3.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    }
+  ],
+  "logos": [
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image4.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    },
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image5.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    },
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image6.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    }
+  ],
+  "posters": [
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image7.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    },
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image8.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    },
+    {
+      "aspect_ratio": 1.33,
+      "height": 960,
+      "iso_639_1": "en",
+      "file_path": "/image9.jpg",
+      "vote_average": 0.63,
+      "vote_count": 150,
+      "width": 1280
+    }
+  ],
+  "id": 500
+}

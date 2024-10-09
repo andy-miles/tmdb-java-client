@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "descriptors": [
+        "Descriptor 1",
+        "Descriptor 2",
+        "Descriptor 3"
+      ],
+      "iso_3166_1": "Country Code 1",
+      "rating": "Rating 1"
+    },
+    {
+      "descriptors": [
+        "Descriptor 5",
+        "Descriptor 6",
+        "Descriptor 7"
+      ],
+      "iso_3166_1": "Country Code 5",
+      "rating": "Rating 5"
+    },
+    {
+      "descriptors": [
+        "Descriptor 10",
+        "Descriptor 11",
+        "Descriptor 12"
+      ],
+      "iso_3166_1": "Country Code 10",
+      "rating": "Rating 10"
+    }
+  ],
+  "id": 100
+}

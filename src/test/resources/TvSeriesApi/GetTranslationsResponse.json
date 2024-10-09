@@ -1,0 +1,41 @@
+{
+  "translations": [
+    {
+      "iso_3166_1": "Country Code 1",
+      "iso_639_1": "Language Code 1",
+      "name": "Translation Name 1",
+      "english_name": "English Name 1",
+      "data": {
+        "name": "TV Series Translation Name 1",
+        "overview": "TV Series Translation Overview 1",
+        "homepage": "https://somesite.com",
+        "tagline": "TV Series Translation Tagline 1"
+      }
+    },
+    {
+      "iso_3166_1": "Country Code 2",
+      "iso_639_1": "Language Code 2",
+      "name": "Translation Name 2",
+      "english_name": "English Name 2",
+      "data": {
+        "name": "TV Series Translation Name 2",
+        "overview": "TV Series Translation Overview 2",
+        "homepage": "https://somesite.com",
+        "tagline": "TV Series Translation Tagline 2"
+      }
+    },
+    {
+      "iso_3166_1": "Country Code 3",
+      "iso_639_1": "Language Code 3",
+      "name": "Translation Name 3",
+      "english_name": "English Name 3",
+      "data": {
+        "name": "TV Series Translation Name 3",
+        "overview": "TV Series Translation Overview 3",
+        "homepage": "https://somesite.com",
+        "tagline": "TV Series Translation Tagline 3"
+      }
+    }
+  ],
+  "id": 500
+}

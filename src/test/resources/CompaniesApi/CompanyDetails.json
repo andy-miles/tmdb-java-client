@@ -1,0 +1,10 @@
+{
+  "description": "Company Description",
+  "headquarters": "Company Headquarter Location",
+  "homepage": "https://someurl.com",
+  "logo_path": "/companyLogo.jpg",
+  "name": "Company Name",
+  "origin_country": "US",
+  "parent_company": "Parent Company Name",
+  "id": 1
+}

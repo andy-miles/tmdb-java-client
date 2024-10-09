@@ -1,0 +1,35 @@
+{
+  "translations": [
+    {
+      "iso_3166_1": "Country Code 1",
+      "iso_639_1": "Language Code 1",
+      "name": "Name 1",
+      "english_name": "English Name 1",
+      "data": {
+        "name": "Name 1",
+        "overview": "Overview 1"
+      }
+    },
+    {
+      "iso_3166_1": "Country Code 2",
+      "iso_639_1": "Language Code 2",
+      "name": "Name 2",
+      "english_name": "English Name 2",
+      "data": {
+        "name": "Name 2",
+        "overview": "Overview 2"
+      }
+    },
+    {
+      "iso_3166_1": "Country Code 3",
+      "iso_639_1": "Language Code 3",
+      "name": "Name 3",
+      "english_name": "English Name 3",
+      "data": {
+        "name": "Name 3",
+        "overview": "Overview 3"
+      }
+    }
+  ],
+  "id": 400
+}

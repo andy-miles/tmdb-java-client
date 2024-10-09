@@ -1,0 +1,12 @@
+{
+  "imdb_id": "IMDB ID Value",
+  "freebase_mid": "Freebase MID",
+  "freebase_id": "Freebase ID",
+  "tvdb_id": 1,
+  "tvrage_id": 2,
+  "wikidata_id": "Wikidata ID",
+  "facebook_id": "Facebook ID",
+  "instagram_id": "Instagram ID",
+  "twitter_id": "Twitter ID",
+  "id": 500
+}

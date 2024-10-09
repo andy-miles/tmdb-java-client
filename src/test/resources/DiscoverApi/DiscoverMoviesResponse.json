@@ -1,0 +1,102 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "genre_ids": [
+        12,
+        56,
+        4
+      ],
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "Original Title 1",
+      "overview": "Summary 1",
+      "popularity": 0.75,
+      "poster_path": "/poster.jpg",
+      "release_date": "2021-12-01",
+      "title": "Title 1",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 230,
+      "id": 1
+    },
+    {
+      "genre_ids": [
+        12,
+        56,
+        4
+      ],
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "Original Title 2",
+      "overview": "Summary 2",
+      "popularity": 0.75,
+      "poster_path": "/poster.jpg",
+      "release_date": "2021-12-01",
+      "title": "Title 2",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 230,
+      "id": 2
+    },
+    {
+      "genre_ids": [
+        12,
+        56,
+        4
+      ],
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "Original Title 3",
+      "overview": "Summary 3",
+      "popularity": 0.75,
+      "poster_path": "/poster.jpg",
+      "release_date": "2021-12-01",
+      "title": "Title 3",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 230,
+      "id": 3
+    },
+    {
+      "genre_ids": [
+        12,
+        56,
+        4
+      ],
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "Original Title 4",
+      "overview": "Summary 4",
+      "popularity": 0.75,
+      "poster_path": "/poster.jpg",
+      "release_date": "2021-12-01",
+      "title": "Title 4",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 230,
+      "id": 4
+    },
+    {
+      "genre_ids": [
+        12,
+        56,
+        4
+      ],
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "Original Title 5",
+      "overview": "Summary 5",
+      "popularity": 0.75,
+      "poster_path": "/poster.jpg",
+      "release_date": "2021-12-01",
+      "title": "Title 5",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 230,
+      "id": 5
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 5
+}

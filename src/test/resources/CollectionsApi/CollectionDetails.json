@@ -1,0 +1,93 @@
+{
+  "name": "Collection Name",
+  "overview": "Collection Summary",
+  "poster_path": "/collectionPosterPath.jpg",
+  "backdrop_path": "/collectionBackdropPath.jpg",
+  "parts": [
+    {
+      "adult": false,
+      "backdrop_path": "/backdropPath.jpg",
+      "title": "Part Title 1",
+      "original_language": "en",
+      "original_title": "Original Title 1",
+      "overview": "Summary 1",
+      "poster_path": "/posterPath.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "popularity": 0.7,
+      "release_date": "2004-06-15",
+      "video": false,
+      "vote_average": 0.65,
+      "vote_count": 2000,
+      "id": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdropPath.jpg",
+      "title": "Part Title 2",
+      "original_language": "en",
+      "original_title": "Original Title 2",
+      "overview": "Summary 2",
+      "poster_path": "/posterPath.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "popularity": 0.7,
+      "release_date": "2004-06-15",
+      "video": false,
+      "vote_average": 0.65,
+      "vote_count": 2000,
+      "id": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdropPath.jpg",
+      "title": "Part Title 3",
+      "original_language": "en",
+      "original_title": "Original Title 3",
+      "overview": "Summary 3",
+      "poster_path": "/posterPath.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "popularity": 0.7,
+      "release_date": "2004-06-15",
+      "video": false,
+      "vote_average": 0.65,
+      "vote_count": 2000,
+      "id": 3
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/backdropPath.jpg",
+      "title": "Part Title 4",
+      "original_language": "en",
+      "original_title": "Original Title 4",
+      "overview": "Summary 4",
+      "poster_path": "/posterPath.jpg",
+      "media_type": "movie",
+      "genre_ids": [
+        1,
+        2,
+        3
+      ],
+      "popularity": 0.7,
+      "release_date": "2004-06-15",
+      "video": false,
+      "vote_average": 0.65,
+      "vote_count": 2000,
+      "id": 4
+    }
+  ],
+  "id": 1241
+}

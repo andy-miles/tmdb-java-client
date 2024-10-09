@@ -1,0 +1,176 @@
+{
+  "adult": false,
+  "backdrop_path": "/backdrop.jpg",
+  "created_by": [
+    {
+      "credit_id": "Credit ID 1",
+      "gender": 1,
+      "profile_path": "/profile1.png",
+      "name": "Credit 1",
+      "id": 1
+    },
+    {
+      "credit_id": "Credit ID 2",
+      "gender": 1,
+      "profile_path": "/profile2.png",
+      "name": "Credit 2",
+      "id": 2
+    },
+    {
+      "credit_id": "Credit ID 3",
+      "gender": 1,
+      "profile_path": "/profile3.png",
+      "name": "Credit 3",
+      "id": 3
+    }
+  ],
+  "episode_run_time": [
+    22,
+    24,
+    23
+  ],
+  "first_air_date": "2020-01-01",
+  "genres": [
+    {
+      "name": "Genre 1",
+      "id": 1
+    },
+    {
+      "name": "Genre 2",
+      "id": 2
+    },
+    {
+      "name": "Genre 3",
+      "id": 3
+    }
+  ],
+  "homepage": "https://homepage.com",
+  "in_production": false,
+  "languages": [
+    "en"
+  ],
+  "last_air_date": "2023-01-01",
+  "last_episode_to_air": {
+    "episode_type": "Episode Type Value",
+    "air_date": "2010-11-04",
+    "episode_number": 4,
+    "overview": "Episode Overview Value",
+    "production_code": "Production Code Value",
+    "runtime": 22,
+    "season_number": 1,
+    "still_path": "/epStill.png",
+    "vote_average": 0.64,
+    "vote_count": 1000,
+    "name": "TV Episode Name Value",
+    "id": 1
+  },
+  "networks": [
+    {
+      "logo_path": "/logo1.png",
+      "origin_country": "US",
+      "name": "Network 1",
+      "id": 1
+    },
+    {
+      "logo_path": "/logo2.png",
+      "origin_country": "US",
+      "name": "Network 2",
+      "id": 2
+    },
+    {
+      "logo_path": "/logo3.png",
+      "origin_country": "US",
+      "name": "Network 3",
+      "id": 3
+    }
+  ],
+  "number_of_episodes": 3,
+  "number_of_seasons": 3,
+  "origin_country": [
+    "US"
+  ],
+  "original_language": "TV Series Overview",
+  "original_name": "Original TV Series Name Value",
+  "popularity": 0.42,
+  "poster_path": "/poster.jpg",
+  "production_companies": [
+    {
+      "logo_path": "/productionCompany1.jpg",
+      "origin_country": "US",
+      "name": "Production Company1",
+      "id": 1
+    },
+    {
+      "logo_path": "/productionCompany2.jpg",
+      "origin_country": "US",
+      "name": "Production Company2",
+      "id": 2
+    },
+    {
+      "logo_path": "/productionCompany3.jpg",
+      "origin_country": "US",
+      "name": "Production Company3",
+      "id": 3
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "ProductionCountry1"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "ProductionCountry2"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "ProductionCountry3"
+    }
+  ],
+  "seasons": [
+    {
+      "_id": "Season ID 1",
+      "air_date": "2011-01-01",
+      "overview": "TV Season Overview 1",
+      "poster_path": "/poster1.jpg",
+      "season_number": 1,
+      "vote_average": 0.34,
+      "name": "TV Season 1",
+      "id": 1
+    },
+    {
+      "_id": "Season ID 2",
+      "air_date": "2012-01-01",
+      "overview": "TV Season Overview 2",
+      "poster_path": "/poster2.jpg",
+      "season_number": 2,
+      "vote_average": 0.34,
+      "name": "TV Season 2",
+      "id": 2
+    },
+    {
+      "_id": "Season ID 3",
+      "air_date": "2013-01-01",
+      "overview": "TV Season Overview 3",
+      "poster_path": "/poster3.jpg",
+      "season_number": 3,
+      "vote_average": 0.34,
+      "name": "TV Season 3",
+      "id": 3
+    }
+  ],
+  "spoken_languages": [
+    {
+      "english_name": "English",
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Ended",
+  "tagline": "TV Series Tag Line",
+  "type": "Holiday Special",
+  "vote_average": 0.45,
+  "vote_count": 2000,
+  "name": "None",
+  "id": 1000
+}

@@ -1,0 +1,31 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "logo_path": "/companyLogo1.jpg",
+      "origin_country": "US",
+      "name": "Company 1",
+      "id": 1
+    },
+    {
+      "logo_path": "/companyLogo2.jpg",
+      "origin_country": "US",
+      "name": "Company 2",
+      "id": 2
+    },
+    {
+      "logo_path": "/companyLogo3.jpg",
+      "origin_country": "US",
+      "name": "Company 3",
+      "id": 3
+    },
+    {
+      "logo_path": "/companyLogo4.jpg",
+      "origin_country": "US",
+      "name": "Company 4",
+      "id": 4
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 4
+}

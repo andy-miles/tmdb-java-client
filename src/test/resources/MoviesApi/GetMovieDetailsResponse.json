@@ -1,0 +1,73 @@
+{
+  "belongs_to_collection": {
+    "poster_path": "/movieCollectionPoster.jpg",
+    "backdrop_path": "/movieCollectionBackdrop.jpg",
+    "name": "MovieCollectionName",
+    "id": 3000
+  },
+  "budget": 10000000,
+  "genres": [
+    {
+      "name": "Genre 1",
+      "id": 1
+    },
+    {
+      "name": "Genre 2",
+      "id": 2
+    },
+    {
+      "name": "Genre 3",
+      "id": 3
+    }
+  ],
+  "homepage": "https://someMovieHomepage.com",
+  "imdb_id": "imdbIdValue",
+  "production_companies": [
+    {
+      "logo_path": "/productionCompany1.jpg",
+      "origin_country": "US",
+      "name": "Production Company1",
+      "id": 1
+    },
+    {
+      "logo_path": "/productionCompany2.jpg",
+      "origin_country": "US",
+      "name": "Production Company2",
+      "id": 2
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "ProductionCountry1"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "ProductionCountry2"
+    }
+  ],
+  "revenue": 20000000,
+  "runtime": 120,
+  "spoken_languages": [
+    {
+      "english_name": "English",
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "statusValue",
+  "tagline": "taglineValue",
+  "adult": false,
+  "backdrop_path": "/backdrop.jpg",
+  "original_language": "en",
+  "original_title": "Original Movie Title",
+  "overview": "Overview for movie",
+  "popularity": 0.6,
+  "poster_path": "/poster.jpg",
+  "release_date": "2024-05-15",
+  "title": "Movie Title",
+  "video": false,
+  "vote_average": 0.55,
+  "vote_count": 100,
+  "id": 1
+}

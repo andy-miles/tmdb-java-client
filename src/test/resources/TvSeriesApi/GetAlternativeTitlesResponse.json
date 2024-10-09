@@ -1,0 +1,20 @@
+{
+  "titles": [
+    {
+      "iso_3166_1": "US",
+      "title": "Alternate Title 1",
+      "type": "Alternate Title Type 1"
+    },
+    {
+      "iso_3166_1": "US",
+      "title": "Alternate Title 2",
+      "type": "Alternate Title Type 2"
+    },
+    {
+      "iso_3166_1": "US",
+      "title": "Alternate Title 3",
+      "type": "Alternate Title Type 3"
+    }
+  ],
+  "id": 300
+}

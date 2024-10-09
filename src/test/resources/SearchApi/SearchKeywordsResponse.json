@@ -1,0 +1,23 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "name": "Keyword 1",
+      "id": 1
+    },
+    {
+      "name": "Keyword 2",
+      "id": 2
+    },
+    {
+      "name": "Keyword 3",
+      "id": 3
+    },
+    {
+      "name": "Keyword 4",
+      "id": 4
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 4
+}

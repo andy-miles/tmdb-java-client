@@ -1,0 +1,32 @@
+{
+  "translations": [
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 1",
+      "english_name": "English name 1",
+      "data": {
+        "biography": "Biography 1"
+      }
+    },
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 2",
+      "english_name": "English name 2",
+      "data": {
+        "biography": "Biography 2"
+      }
+    },
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 3",
+      "english_name": "English name 3",
+      "data": {
+        "biography": "Biography 3"
+      }
+    }
+  ],
+  "id": 1
+}

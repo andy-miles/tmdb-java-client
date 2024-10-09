@@ -1,0 +1,35 @@
+{
+  "translations": [
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 1",
+      "english_name": "English name 1",
+      "data": {
+        "name": "Translated Episode Name 1",
+        "overview": "Translated Overview 1"
+      }
+    },
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 2",
+      "english_name": "English name 2",
+      "data": {
+        "name": "Translated Episode Name 2",
+        "overview": "Translated Overview 2"
+      }
+    },
+    {
+      "iso_3166_1": "US",
+      "iso_639_1": "en",
+      "name": "Translation name 3",
+      "english_name": "English name 3",
+      "data": {
+        "name": "Translated Episode Name 3",
+        "overview": "Translated Overview 3"
+      }
+    }
+  ],
+  "id": 1
+}

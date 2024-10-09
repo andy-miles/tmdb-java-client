@@ -1,0 +1,82 @@
+{
+  "results": [
+    {
+      "iso_3166_1": "US",
+      "release_dates": [
+        {
+          "certification": "Certification 11",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 11",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        },
+        {
+          "certification": "Certification 12",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 12",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        },
+        {
+          "certification": "Certification 13",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 13",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        }
+      ]
+    },
+    {
+      "iso_3166_1": "US",
+      "release_dates": [
+        {
+          "certification": "Certification 21",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 21",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        },
+        {
+          "certification": "Certification 22",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 22",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        },
+        {
+          "certification": "Certification 23",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 23",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        }
+      ]
+    },
+    {
+      "iso_3166_1": "US",
+      "release_dates": [
+        {
+          "certification": "Certification 31",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 31",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        },
+        {
+          "certification": "Certification 32",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 32",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        },
+        {
+          "certification": "Certification 33",
+          "iso_639_1": "en",
+          "note": "ReleaseDate Note 33",
+          "release_date": "2020-07-01 12:00:00 UTC",
+          "type": 1
+        }
+      ]
+    }
+  ]
+}

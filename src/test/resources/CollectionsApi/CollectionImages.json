@@ -1,0 +1,97 @@
+{
+  "backdrops": [
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath1",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    },
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath2",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    },
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath3",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    },
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath4",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    },
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath5",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    }
+  ],
+  "posters": [
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath1",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    },
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath2",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    },
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath3",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    },
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath4",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    },
+    {
+      "aspect_ratio": 1.77,
+      "height": 1080,
+      "iso_639_1": "en",
+      "file_path": "/imageFilePath5",
+      "vote_average": 0.9,
+      "vote_count": 1000,
+      "width": 1920
+    }
+  ],
+  "id": 1
+}

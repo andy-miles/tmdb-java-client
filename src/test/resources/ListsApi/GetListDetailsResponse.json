@@ -1,0 +1,221 @@
+{
+  "created_by": "User name",
+  "description": "List description",
+  "favorite_count": 50,
+  "items": [
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 1",
+      "overview": "Summary 1",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 1",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 1
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 2",
+      "overview": "Summary 2",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 2",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 2
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 3",
+      "overview": "Summary 3",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 3",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 3
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 4",
+      "overview": "Summary 4",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 4",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 4
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 5",
+      "overview": "Summary 5",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 5",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 5
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 6",
+      "overview": "Summary 6",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 6",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 6
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 7",
+      "overview": "Summary 7",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 7",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 7
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 8",
+      "overview": "Summary 8",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 8",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 8
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 9",
+      "overview": "Summary 9",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 9",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 9
+    },
+    {
+      "genre_ids": [
+        43,
+        59,
+        100
+      ],
+      "media_type": "movie",
+      "adult": false,
+      "backdrop_path": "/backdrop.jpg",
+      "original_language": "en",
+      "original_title": "Original Title 10",
+      "overview": "Summary 10",
+      "popularity": 0.98,
+      "poster_path": "poster.jpg",
+      "release_date": "2018-08-02",
+      "title": "Title 10",
+      "video": false,
+      "vote_average": 0.45,
+      "vote_count": 45,
+      "id": 10
+    }
+  ],
+  "item_count": 10,
+  "iso_639_1": "en",
+  "poster_path": "/poster.jpg",
+  "id": 1
+}

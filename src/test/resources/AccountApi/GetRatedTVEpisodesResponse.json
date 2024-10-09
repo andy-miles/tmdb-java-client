@@ -1,0 +1,52 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "air_date": "2017-09-16",
+      "episode_number": 1,
+      "overview": "Episode Summary 1",
+      "production_code": "ProdCode",
+      "runtime": 30,
+      "season_number": 1,
+      "show_id": 11,
+      "still_path": "/stillPath.jpg",
+      "vote_average": 0.75,
+      "vote_count": 534,
+      "rating": 9,
+      "name": "Episode 1",
+      "id": 1
+    },
+    {
+      "air_date": "2017-09-16",
+      "episode_number": 1,
+      "overview": "Episode Summary 2",
+      "production_code": "ProdCode",
+      "runtime": 30,
+      "season_number": 1,
+      "show_id": 12,
+      "still_path": "/stillPath.jpg",
+      "vote_average": 0.75,
+      "vote_count": 534,
+      "rating": 9,
+      "name": "Episode 2",
+      "id": 2
+    },
+    {
+      "air_date": "2017-09-16",
+      "episode_number": 1,
+      "overview": "Episode Summary 3",
+      "production_code": "ProdCode",
+      "runtime": 30,
+      "season_number": 1,
+      "show_id": 13,
+      "still_path": "/stillPath.jpg",
+      "vote_average": 0.75,
+      "vote_count": 534,
+      "rating": 9,
+      "name": "Episode 3",
+      "id": 3
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 3
+}

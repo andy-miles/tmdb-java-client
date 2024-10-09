@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "display_priorities": {
+        "US": 1,
+        "GB": 2
+      },
+      "logo_path": "/logo1.jpg",
+      "provider_id": 1,
+      "provider_name": "Provider 1",
+      "display_priority": 1
+    },
+    {
+      "display_priorities": {
+        "US": 1,
+        "GB": 2
+      },
+      "logo_path": "/logo2.jpg",
+      "provider_id": 2,
+      "provider_name": "Provider 2",
+      "display_priority": 2
+    },
+    {
+      "display_priorities": {
+        "US": 1,
+        "GB": 2
+      },
+      "logo_path": "/logo3.jpg",
+      "provider_id": 3,
+      "provider_name": "Provider 3",
+      "display_priority": 3
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "adult": false
+    },
+    {
+      "id": 2,
+      "adult": false
+    },
+    {
+      "id": 3,
+      "adult": false
+    },
+    {
+      "id": 4,
+      "adult": false
+    },
+    {
+      "id": 5,
+      "adult": false
+    },
+    {
+      "id": 6,
+      "adult": false
+    },
+    {
+      "id": 7,
+      "adult": false
+    },
+    {
+      "id": 8,
+      "adult": false
+    },
+    {
+      "id": 9,
+      "adult": false
+    },
+    {
+      "id": 10,
+      "adult": false
+    }
+  ],
+  "page": 1,
+  "total_pages": 1,
+  "total_results": 10
+}
