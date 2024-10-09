@@ -158,6 +158,36 @@ Integer accountId = accountDetails.getId();
 sessionManager.deleteSession();
 ```
 
+### Customizing the HTTP client configuration
+
+<details>
+<summary>OkHttpClientBuilder example</summary>
+
+If your use-case requires configuring the underlying <code>OkHttpClient</code> instance (e.g., configuring your own
+SSL cert verification, proxy, and/or connection timeouts), you can configure the client with the provided
+[OkHttpClientBuilder](https://github.com/andy-miles/tmdb-java-client/blob/main/src/main/java/com/amilesend/tmdb/client/connection/http/OkHttpClientBuilder.java),
+or alternatively with [OkHttp's builder](https://square.github.io/okhttp/4.x/okhttp/okhttp3/-ok-http-client/).
+
+```java
+OkHttpClient httpClient = OkHttpClientBuilder.builder()
+        .trustManager(myX509TrustManager) // Custom trust manager for self/internally signed SSL/TLS certs
+        .hostnameVerifier(myHostnameVerifier) // Custom hostname verification for SSL/TLS endpoints
+        .proxy(myProxy, myProxyUsername, myProxyPassword) // Proxy config
+        .connectTimeout(8000L) // connection timeout in milliseconds
+        .readTimeout(5000L) // read timeout in milliseconds
+        .writeTimeout(5000L) // write timeout in milliseconds
+        .build();
+Connection connection = Connection.builder()
+        .httpClient(httpClient)
+        .gsonFactory(GsonFactory.getInstance())
+        .readAccessToken("MyReadAccessToken")
+        .build();
+Tmdb tmdb = new Tmdb(connection);
+```
+
+</details>
+
+
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
 <!-- CONTRIBUTING -->
