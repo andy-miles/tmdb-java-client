@@ -207,7 +207,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the GPLv3 license. See [LICENSE](https://github.com/andy-miles/onedrive-java-sdk/blob/main/LICENSE) for more information.
+Distributed under the GPLv3 license. See [LICENSE](https://github.com/andy-miles/tmdb-java-client/blob/main/LICENSE) for more information.
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
 
@@ -226,16 +226,16 @@ Project Link: [https://github.com/andy-miles/tmdb-java-client](https://github.co
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/andy-miles/onedrive-java-sdk.svg?style=for-the-badge
-[contributors-url]: https://github.com/andy-miles/onedrive-java-sdk/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/andy-miles/onedrive-java-sdk.svg?style=for-the-badge
-[forks-url]: https://github.com/andy-miles/onedrive-java-sdk/network/members
-[stars-shield]: https://img.shields.io/github/stars/andy-miles/onedrive-java-sdk.svg?style=for-the-badge
-[stars-url]: https://github.com/andy-miles/onedrive-java-sdk/stargazers
-[issues-shield]: https://img.shields.io/github/issues/andy-miles/onedrive-java-sdk.svg?style=for-the-badge
-[issues-url]: https://github.com/andy-miles/onedrive-java-sdk/issues
-[license-shield]: https://img.shields.io/github/license/andy-miles/onedrive-java-sdk.svg?style=for-the-badge
-[license-url]: https://github.com/andy-miles/onedrive-java-sdk/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/andy-miles/tmdb-java-client.svg?style=for-the-badge
+[contributors-url]: https://github.com/andy-miles/tmdb-java-client/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/andy-miles/tmdb-java-client.svg?style=for-the-badge
+[forks-url]: https://github.com/andy-miles/tmdb-java-client/network/members
+[stars-shield]: https://img.shields.io/github/stars/andy-miles/tmdb-java-client.svg?style=for-the-badge
+[stars-url]: https://github.com/andy-miles/tmdb-java-client/stargazers
+[issues-shield]: https://img.shields.io/github/issues/andy-miles/tmdb-java-client.svg?style=for-the-badge
+[issues-url]: https://github.com/andy-miles/tmdb-java-client/issues
+[license-shield]: https://img.shields.io/github/license/andy-miles/tmdb-java-client.svg?style=for-the-badge
+[license-url]: https://github.com/andy-miles/tmdb-java-client/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/andy-miles
 [product-screenshot]: images/screenshot.png
