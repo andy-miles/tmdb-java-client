@@ -215,7 +215,7 @@ Distributed under the GPLv3 license. See [LICENSE](https://github.com/andy-miles
 <!-- CONTACT -->
 ## Contact
 
-Andy Miles - andy.miles AT amilesend.com
+Andy Miles - andy.miles (at) amilesend.com
 
 Project Link: [https://github.com/andy-miles/tmdb-java-client](https://github.com/andy-miles/tmdb-java-client)
 
