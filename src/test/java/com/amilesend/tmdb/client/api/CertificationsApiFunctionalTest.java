@@ -1,6 +1,6 @@
 /*
  * tmdb-java-client - A client to access the TMDB API
- * Copyright © 2024 Andy Miles (andy.miles@amilesend.com)
+ * Copyright © 2024-2025 Andy Miles (andy.miles@amilesend.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
