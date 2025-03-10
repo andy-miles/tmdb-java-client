@@ -78,7 +78,17 @@ requires these APIs.
 ## Getting Started
 
 1. Per the [API documentation](https://developer.themoviedb.org/docs/getting-started), you will need to obtain an API read access token in order to make requests to the service.
-2. Instantiate the client with the read access token:
+2. Include this package as a dependency in your project. Note: This package is published to both
+   [GitHub](https://github.com/andy-miles/tmdb-java-client/packages/2277927) and Maven Central repositories.
+
+   ```xml
+   <dependency>
+       <groupId>com.amilesend</groupId>
+       <artifactId>tmdb-java-client</artifactId>
+       <version>3.0.2</version>
+   </dependency>
+   ```
+3. Instantiate the client with the read access token:
 
    ```java
    Tmdb tmdb = new Tmdb("MyReadAccessToken");
