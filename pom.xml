@@ -25,12 +25,12 @@
 
     <groupId>com.amilesend</groupId>
     <artifactId>tmdb-java-client</artifactId>
-    <version>3.0.4-SNAPSHOT</version>
+    <version>3.0.4</version>
 
     <name>tmdb-java-client</name>
     <description>A client to access the TMDB API</description>
     <inceptionYear>2024-2025</inceptionYear>
-    <url></url>
+    <url>https://www.amilesend.com/tmdb-java-client/</url>
     <organization>
         <name>Andy Miles</name>
         <url>https://www.amilesend.com</url>
