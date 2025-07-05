@@ -35,7 +35,7 @@ import static com.amilesend.tmdb.client.data.watch.WatchProvidersApiDataHelper.R
 import static com.amilesend.tmdb.client.data.watch.WatchProvidersApiDataHelper.newGetAvailableRegionsResponse;
 import static com.amilesend.tmdb.client.data.watch.WatchProvidersApiDataHelper.newGetMovieProvidersResponse;
 import static com.amilesend.tmdb.client.data.watch.WatchProvidersApiDataHelper.newGetTvProvidersResponse;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WatchProvidersApiFunctionalTest extends FunctionalTestBase {
     private WatchProvidersApi apiUnderTest;

@@ -38,7 +38,7 @@ import static com.amilesend.tmdb.client.data.auth.AuthenticationApiDataHelper.ne
 import static com.amilesend.tmdb.client.data.auth.AuthenticationApiDataHelper.newCreateSessionResponse;
 import static com.amilesend.tmdb.client.data.auth.AuthenticationApiDataHelper.newDeleteSessionResponse;
 import static com.amilesend.tmdb.client.data.auth.AuthenticationApiDataHelper.newValidateKeyResponse;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AuthenticationApiFunctionalTest extends FunctionalTestBase {
     private AuthenticationApi apiUnderTest;

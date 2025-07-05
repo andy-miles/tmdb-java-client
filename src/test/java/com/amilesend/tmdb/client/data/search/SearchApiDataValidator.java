@@ -39,10 +39,10 @@ import java.util.List;
 import java.util.Objects;
 
 import static com.amilesend.tmdb.client.data.movie.MoviesApiDataValidator.assertSameKeywords;
-import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.fail;
 
 @UtilityClass
 public class SearchApiDataValidator {

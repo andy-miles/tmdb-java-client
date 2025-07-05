@@ -73,7 +73,7 @@ import static com.amilesend.tmdb.client.data.tv.TvEpisodesApiDataValidator.asser
 import static com.amilesend.tmdb.client.data.tv.TvEpisodesApiDataValidator.assertSameGetImagesResponse;
 import static com.amilesend.tmdb.client.data.tv.TvEpisodesApiDataValidator.assertSameGetTranslationsResponse;
 import static com.amilesend.tmdb.client.data.tv.TvEpisodesApiDataValidator.assertSameGetVideosResponse;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TvEpisodesApiFunctionalTest extends FunctionalTestBase {
     private TvEpisodesApi apiUnderTest;

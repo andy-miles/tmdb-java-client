@@ -116,7 +116,7 @@ import static com.amilesend.tmdb.client.data.movie.MoviesApiDataValidator.assert
 import static com.amilesend.tmdb.client.data.movie.MoviesApiDataValidator.assertSameGetVideosResponse;
 import static com.amilesend.tmdb.client.data.movie.MoviesApiDataValidator.assertSameGetWatchProvidersResponse;
 import static com.amilesend.tmdb.client.data.movie.MoviesApiDataValidator.assertSameMovieDetails;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MoviesApiFunctionalTest extends FunctionalTestBase {
     private MoviesApi apiUnderTest;

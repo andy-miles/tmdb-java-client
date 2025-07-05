@@ -77,7 +77,7 @@ import static com.amilesend.tmdb.client.data.account.AccountApiDataValidator.ass
 import static com.amilesend.tmdb.client.data.account.AccountApiDataValidator.assertSameGetRatedTVResponse;
 import static com.amilesend.tmdb.client.data.account.AccountApiDataValidator.assertSameGetWatchlistMoviesResponse;
 import static com.amilesend.tmdb.client.data.account.AccountApiDataValidator.assertSameGetWatchlistTVResponse;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AccountApiFunctionalTest extends FunctionalTestBase {
     private static final int ACCOUNT_ID = 1;

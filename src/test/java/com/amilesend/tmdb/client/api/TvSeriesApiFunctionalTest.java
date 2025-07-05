@@ -126,7 +126,7 @@ import static com.amilesend.tmdb.client.data.tv.TvSeriesApiDataValidator.assertS
 import static com.amilesend.tmdb.client.data.tv.TvSeriesApiDataValidator.assertSameGetTranslationsResponse;
 import static com.amilesend.tmdb.client.data.tv.TvSeriesApiDataValidator.assertSameGetVideosResponse;
 import static com.amilesend.tmdb.client.data.tv.TvSeriesApiDataValidator.assertSameGetWatchProvidersResponse;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TvSeriesApiFunctionalTest extends FunctionalTestBase {
     private TvSeriesApi apiUnderTest;

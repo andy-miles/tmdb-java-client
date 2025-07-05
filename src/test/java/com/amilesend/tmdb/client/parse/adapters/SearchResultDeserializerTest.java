@@ -34,9 +34,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.lang.reflect.Type;
 
 import static com.amilesend.tmdb.client.parse.adapters.PersonCreditDeserializerTest.setUpNewJsonElement;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
