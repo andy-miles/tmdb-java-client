@@ -119,7 +119,7 @@
         <maven.javadoc.plugin.version>3.11.2</maven.javadoc.plugin.version>
         <mockito.version>5.18.0</mockito.version>
         <slf4j.version>2.0.16</slf4j.version>
-        <okhttp.version>5.0.0</okhttp.version>
+        <okhttp.version>5.1.0</okhttp.version>
     </properties>
 
     <dependencies>
@@ -193,7 +193,6 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.5.0</version>
         </dependency>
-        <!-- HttpClient -->
         <!-- HttpClient -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
