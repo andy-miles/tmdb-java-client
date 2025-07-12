@@ -91,7 +91,7 @@ requires these APIs.
 3. Instantiate the client with the read access token:
 
    ```java
-   Tmdb tmdb = new Tmdb("MyReadAccessToken");
+   Tmdb tmdb = new Tmdb("MyReadAccessToken", "MyUserAgent/1.0");
    // Access APIs (e.g., MoviesApi)
    MoviesApi moviesApi = tmdb.getMoviesApi();
    ```
