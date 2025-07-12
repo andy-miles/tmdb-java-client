@@ -17,7 +17,7 @@
  */
 package com.amilesend.tmdb.client.api;
 
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.client.connection.Connection;
 import com.amilesend.tmdb.client.model.movie.list.GetNowPlayingRequest;
 import com.amilesend.tmdb.client.model.movie.list.GetNowPlayingResponse;
 import com.amilesend.tmdb.client.model.movie.list.GetPopularRequest;

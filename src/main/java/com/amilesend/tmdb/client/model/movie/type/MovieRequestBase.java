@@ -17,9 +17,9 @@
  */
 package com.amilesend.tmdb.client.model.movie.type;
 
+import com.amilesend.client.parse.strategy.GsonExclude;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
-import com.amilesend.tmdb.client.parse.strategy.GsonExclude;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 import okhttp3.HttpUrl;

@@ -17,7 +17,7 @@
  */
 package com.amilesend.tmdb.client.api;
 
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.client.connection.Connection;
 import com.amilesend.tmdb.client.model.tv.episodes.AddRatingRequest;
 import com.amilesend.tmdb.client.model.tv.episodes.AddRatingResponse;
 import com.amilesend.tmdb.client.model.tv.episodes.DeleteRatingRequest;

@@ -17,6 +17,8 @@
  */
 package com.amilesend.tmdb.client;
 
+import com.amilesend.client.connection.Connection;
+import com.amilesend.client.connection.DefaultConnectionBuilder;
 import com.amilesend.tmdb.client.api.AccountApi;
 import com.amilesend.tmdb.client.api.AuthenticationApi;
 import com.amilesend.tmdb.client.api.CertificationsApi;
@@ -45,8 +47,11 @@ import com.amilesend.tmdb.client.api.TvSeasonsApi;
 import com.amilesend.tmdb.client.api.TvSeriesApi;
 import com.amilesend.tmdb.client.api.TvSeriesListsApi;
 import com.amilesend.tmdb.client.api.WatchProvidersApi;
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.tmdb.client.connection.auth.TokenAuthInfo;
+import com.amilesend.tmdb.client.connection.auth.TokenAuthManager;
+import com.amilesend.tmdb.client.parse.GsonFactory;
 import lombok.Getter;
+import okhttp3.OkHttpClient;
 
 /**
  * A helper class to vend API classes that are associated with a {@link Connection} to TMDB service.
@@ -54,6 +59,9 @@ import lombok.Getter;
  * @see Connection
  */
 public class Tmdb {
+    public static final String API_URL = "https://api.themoviedb.org/3";
+    public static final String USER_AGENT = "TMDBJavaClient/3.2";
+
     @Getter
     private final Connection connection;
 
@@ -63,7 +71,25 @@ public class Tmdb {
      * @param readAccessToken the authenticated read access token
      */
     public Tmdb(final String readAccessToken) {
-        connection = Connection.newDefaultInstance(readAccessToken);
+       this(readAccessToken, USER_AGENT);
+    }
+
+    /**
+     * Creates a new {@code Tmdb} object that is configured with the default settings.
+     *
+     * @param readAccessToken the authenticated read access token
+     * @param userAgent the user agent to define in requests made to the service
+     */
+    public Tmdb(final String readAccessToken, final String userAgent) {
+        final TokenAuthInfo authInfo = new TokenAuthInfo(readAccessToken);
+        connection = new DefaultConnectionBuilder()
+                .userAgent(userAgent)
+                .baseUrl(API_URL)
+                .httpClient(new OkHttpClient.Builder().build())
+                .authManager(new TokenAuthManager(authInfo))
+                .gsonFactory(new GsonFactory())
+                .isGzipContentEncodingEnabled(false)
+                .build();
     }
 
     /**

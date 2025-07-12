@@ -17,7 +17,7 @@
  */
 package com.amilesend.tmdb.client.api;
 
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.client.connection.Connection;
 import com.amilesend.tmdb.client.model.collection.GetCollectionDetailsRequest;
 import com.amilesend.tmdb.client.model.collection.GetCollectionDetailsResponse;
 import com.amilesend.tmdb.client.model.collection.GetCollectionImagesRequest;

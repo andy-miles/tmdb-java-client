@@ -17,7 +17,8 @@
  */
 package com.amilesend.tmdb.client.api;
 
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.client.connection.Connection;
+import com.amilesend.client.parse.parser.ListParser;
 import com.amilesend.tmdb.client.model.configuration.GetConfigurationDetailsResponse;
 import com.amilesend.tmdb.client.model.configuration.GetCountriesResponse;
 import com.amilesend.tmdb.client.model.configuration.GetJobsResponse;
@@ -28,7 +29,7 @@ import com.amilesend.tmdb.client.model.configuration.type.ConfigurationCountry;
 import com.amilesend.tmdb.client.model.configuration.type.ConfigurationLanguage;
 import com.amilesend.tmdb.client.model.configuration.type.ConfigurationTimezone;
 import com.amilesend.tmdb.client.model.configuration.type.Job;
-import com.amilesend.tmdb.client.parse.parser.ListParser;
+import com.amilesend.tmdb.client.parse.GsonFactory;
 import okhttp3.Request;
 
 import java.util.List;
@@ -123,7 +124,7 @@ public class ConfigurationApi extends ApiBase {
     }
 
     private <T> List<T> executeGetForList(final String apiPath, final Class<T> responseType) {
-        final Connection connection = getConnection();
+        final Connection<GsonFactory> connection = getConnection();
         final String url = new StringBuilder(connection.getBaseUrl())
                 .append(apiPath)
                 .toString();

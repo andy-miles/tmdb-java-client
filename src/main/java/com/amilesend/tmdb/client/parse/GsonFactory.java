@@ -17,7 +17,10 @@
  */
 package com.amilesend.tmdb.client.parse;
 
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.client.connection.Connection;
+import com.amilesend.client.parse.GsonFactoryBase;
+import com.amilesend.client.parse.strategy.AnnotationBasedExclusionStrategy;
+import com.amilesend.client.parse.strategy.AnnotationBasedSerializationExclusionStrategy;
 import com.amilesend.tmdb.client.model.search.type.MediaType;
 import com.amilesend.tmdb.client.model.search.type.PersonCredit;
 import com.amilesend.tmdb.client.model.search.type.SearchResult;
@@ -31,12 +34,10 @@ import com.amilesend.tmdb.client.parse.adapters.PersonCreditDeserializer;
 import com.amilesend.tmdb.client.parse.adapters.SearchResultDeserializer;
 import com.amilesend.tmdb.client.parse.adapters.TimeWindowTypeAdapter;
 import com.amilesend.tmdb.client.parse.adapters.TvEpisodeGroupTypeTypeAdapter;
-import com.amilesend.tmdb.client.parse.strategy.AnnotationBasedExclusionStrategy;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.gsonfire.GsonFireBuilder;
-import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
@@ -44,45 +45,11 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /** Factory that vends new pre-configured {@link Gson} instances. */
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
-public class GsonFactory {
-    private static final GsonFactory INSTANCE = new GsonFactory();
-
-    /**
-     * Gets the singleton {@code GsonFactory} instance.
-     *
-     * @return the factory instance
-     */
-    public static GsonFactory getInstance() {
-        return INSTANCE;
-    }
-
-    /**
-     * Gets a new {@link Gson} instance that is configured for use by {@link Connection}.
-     *
-     * @return the pre-configured Gson instance
-     */
-    public Gson newInstanceForConnection() {
-        return newGsonBuilder().create();
-    }
-
-    /**
-     * Gets a new {@link Gson} instance that is configured for use by {@link Connection} that provides pretty-printed
-     * formatted JSON (i.e., useful for testing and/or debugging).
-     *
-     * @return the pre-configured Gson instance
-     */
-    public Gson newInstanceForPrettyPrinting() {
-        return newGsonBuilder()
-                .setPrettyPrinting()
-                .create();
-    }
-
-    private GsonBuilder newGsonBuilder() {
-        return new GsonFireBuilder()
-                .createGsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                .setExclusionStrategies(new AnnotationBasedExclusionStrategy())
+@NoArgsConstructor
+public class GsonFactory extends GsonFactoryBase<Connection> {
+       @Override
+    protected GsonBuilder configure(final GsonBuilder gsonBuilder, final Connection connection) {
+        return gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter())
                 .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeTypeAdapter())
                 .registerTypeAdapter(LocalTime.class, new LocalTimeTypeAdapter())
@@ -91,5 +58,12 @@ public class GsonFactory {
                 .registerTypeAdapter(SearchResult.class, new SearchResultDeserializer())
                 .registerTypeAdapter(PersonCredit.class, new PersonCreditDeserializer())
                 .registerTypeAdapter(TimeWindow.class, new TimeWindowTypeAdapter());
+    }
+
+    @Override
+    protected GsonBuilder newGsonBuilder() {
+        return new GsonFireBuilder().createGsonBuilder()
+                .setExclusionStrategies(new AnnotationBasedExclusionStrategy())
+                .addSerializationExclusionStrategy(new AnnotationBasedSerializationExclusionStrategy());
     }
 }

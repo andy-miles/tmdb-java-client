@@ -17,10 +17,11 @@
  */
 package com.amilesend.tmdb.client.api;
 
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.client.connection.Connection;
+import com.amilesend.client.parse.parser.BasicParser;
 import com.amilesend.tmdb.client.model.BodyBasedRequest;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
-import com.amilesend.tmdb.client.parse.parser.BasicParser;
+import com.amilesend.tmdb.client.parse.GsonFactory;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +30,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import org.apache.commons.lang3.Validate;
 
-import static com.amilesend.tmdb.client.connection.Connection.JSON_MEDIA_TYPE;
+import static com.amilesend.client.connection.Connection.JSON_MEDIA_TYPE;
 
 /**
  * The API Base class used to simplify the construction of API URLs for the {@link Connection}.
@@ -41,7 +42,7 @@ public abstract class ApiBase {
     /** The connection that wraps the underlying HTTP client. */
     @NonNull
     @Getter
-    private final Connection connection;
+    private final Connection<GsonFactory> connection;
 
     /**
      * Executes a GET request for the given URL path and expected response type class.
@@ -109,7 +110,9 @@ public abstract class ApiBase {
         final HttpUrl.Builder urlBuilder = HttpUrl.parse(urlPath).newBuilder();
         final Request httpRequest = connection.newRequestBuilder()
                 .url(request.populateQueryParameters(urlBuilder).build())
-                .post(RequestBody.create(connection.getGson().toJson(request), JSON_MEDIA_TYPE))
+                .post(RequestBody.create(
+                        connection.getGsonFactory().getInstance(connection).toJson(request),
+                        JSON_MEDIA_TYPE))
                 .build();
         return connection.execute(httpRequest, new BasicParser<>(responseType));
     }
@@ -135,7 +138,9 @@ public abstract class ApiBase {
 
         final Request.Builder requestBuilder =  connection.newRequestBuilder().url(httpUrl);
         if (request instanceof BodyBasedRequest) {
-            requestBuilder.delete(RequestBody.create(connection.getGson().toJson(request), JSON_MEDIA_TYPE));
+            requestBuilder.delete(RequestBody.create(
+                    connection.getGsonFactory().getInstance(connection).toJson(request),
+                    JSON_MEDIA_TYPE));
         } else {
             requestBuilder.delete();
         }

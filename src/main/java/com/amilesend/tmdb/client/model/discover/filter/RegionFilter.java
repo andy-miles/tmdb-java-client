@@ -17,7 +17,7 @@
  */
 package com.amilesend.tmdb.client.model.discover.filter;
 
-import com.amilesend.tmdb.client.connection.RequestException;
+import com.amilesend.client.connection.RequestException;
 import com.amilesend.tmdb.client.model.QueryParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
 import lombok.Builder;

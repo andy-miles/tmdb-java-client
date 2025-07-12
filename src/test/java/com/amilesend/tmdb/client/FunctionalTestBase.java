@@ -17,8 +17,10 @@
  */
 package com.amilesend.tmdb.client;
 
-import com.amilesend.tmdb.client.connection.Connection;
-import com.amilesend.tmdb.client.connection.http.OkHttpClientBuilder;
+import com.amilesend.client.connection.Connection;
+import com.amilesend.client.connection.http.OkHttpClientBuilder;
+import com.amilesend.tmdb.client.connection.auth.TokenAuthInfo;
+import com.amilesend.tmdb.client.connection.auth.TokenAuthManager;
 import com.amilesend.tmdb.client.data.SerializedResource;
 import com.amilesend.tmdb.client.parse.GsonFactory;
 import lombok.Getter;
@@ -83,9 +85,10 @@ public class FunctionalTestBase {
     private void setUpTMDB() {
         connection = Connection.builder()
                 .baseUrl(getMockWebServerUrl())
-                .gsonFactory(GsonFactory.getInstance())
+                .gsonFactory(new GsonFactory())
                 .httpClient(httpClient)
-                .readAccessToken(READ_ACCESS_TOKEN)
+                .userAgent("TestClient/1.0")
+                .authManager(new TokenAuthManager(new TokenAuthInfo(READ_ACCESS_TOKEN)))
                 .build();
         client = new Tmdb(connection);
     }

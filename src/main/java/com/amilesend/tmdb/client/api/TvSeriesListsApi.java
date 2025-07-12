@@ -17,7 +17,7 @@
  */
 package com.amilesend.tmdb.client.api;
 
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.client.connection.Connection;
 import com.amilesend.tmdb.client.model.tv.series.list.GetAiringTodayRequest;
 import com.amilesend.tmdb.client.model.tv.series.list.GetAiringTodayResponse;
 import com.amilesend.tmdb.client.model.tv.series.list.GetOnTheAirRequest;

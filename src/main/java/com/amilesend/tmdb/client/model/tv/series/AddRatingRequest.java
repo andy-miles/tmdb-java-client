@@ -17,13 +17,13 @@
  */
 package com.amilesend.tmdb.client.model.tv.series;
 
+import com.amilesend.client.parse.strategy.GsonExclude;
 import com.amilesend.tmdb.client.model.BodyBasedRequest;
 import com.amilesend.tmdb.client.model.BodyParameter;
 import com.amilesend.tmdb.client.model.GuestSessionBasedRequest;
 import com.amilesend.tmdb.client.model.QueryParameter;
 import com.amilesend.tmdb.client.model.SessionBasedRequest;
 import com.amilesend.tmdb.client.model.tv.series.type.SeriesRequestBase;
-import com.amilesend.tmdb.client.parse.strategy.GsonExclude;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;

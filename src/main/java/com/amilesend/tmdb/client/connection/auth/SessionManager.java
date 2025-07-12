@@ -17,8 +17,8 @@
  */
 package com.amilesend.tmdb.client.connection.auth;
 
+import com.amilesend.client.connection.ResponseException;
 import com.amilesend.tmdb.client.api.AuthenticationApi;
-import com.amilesend.tmdb.client.connection.ResponseException;
 import com.amilesend.tmdb.client.model.auth.CreateSessionRequest;
 import com.amilesend.tmdb.client.model.auth.DeleteSessionRequest;
 import com.google.common.annotations.VisibleForTesting;

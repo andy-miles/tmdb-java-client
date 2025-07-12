@@ -17,10 +17,10 @@
  */
 package com.amilesend.tmdb.client.model.list.type;
 
+import com.amilesend.client.parse.strategy.GsonExclude;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.QueryParameter;
 import com.amilesend.tmdb.client.model.SessionBasedRequest;
-import com.amilesend.tmdb.client.parse.strategy.GsonExclude;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.experimental.SuperBuilder;

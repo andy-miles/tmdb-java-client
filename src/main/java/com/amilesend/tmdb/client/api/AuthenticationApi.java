@@ -17,7 +17,7 @@
  */
 package com.amilesend.tmdb.client.api;
 
-import com.amilesend.tmdb.client.connection.Connection;
+import com.amilesend.client.connection.Connection;
 import com.amilesend.tmdb.client.model.auth.CreateGuestSessionResponse;
 import com.amilesend.tmdb.client.model.auth.CreateRequestTokenResponse;
 import com.amilesend.tmdb.client.model.auth.CreateSessionRequest;
