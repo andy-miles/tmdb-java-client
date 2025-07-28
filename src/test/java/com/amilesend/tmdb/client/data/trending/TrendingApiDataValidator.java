@@ -17,6 +17,7 @@
  */
 package com.amilesend.tmdb.client.data.trending;
 
+import com.amilesend.tmdb.client.data.search.SearchApiDataValidator;
 import com.amilesend.tmdb.client.model.trending.GetAllTrendingResponse;
 import com.amilesend.tmdb.client.model.trending.GetTrendingMoviesResponse;
 import com.amilesend.tmdb.client.model.trending.GetTrendingPeopleResponse;
@@ -25,10 +26,8 @@ import lombok.experimental.UtilityClass;
 
 import java.util.Objects;
 
-import static com.amilesend.tmdb.client.data.search.SearchApiDataValidator.assertSameMovieSearchResults;
-import static com.amilesend.tmdb.client.data.search.SearchApiDataValidator.assertSamePersonSearchResults;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
 import static com.amilesend.tmdb.client.data.search.SearchApiDataValidator.assertSameSearchResults;
-import static com.amilesend.tmdb.client.data.search.SearchApiDataValidator.assertSameTvSeriesSearchResults;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -68,7 +67,10 @@ public class TrendingApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameMovieSearchResults(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        SearchApiDataValidator::assertSameMovieSearchResult),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }
@@ -87,7 +89,10 @@ public class TrendingApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSamePersonSearchResults(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        SearchApiDataValidator::assertSamePersonSearchResult),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }
@@ -106,7 +111,10 @@ public class TrendingApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameTvSeriesSearchResults(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        SearchApiDataValidator::assertSameTvSeriesSearchResult),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }

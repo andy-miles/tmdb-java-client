@@ -27,7 +27,7 @@ import lombok.experimental.UtilityClass;
 
 import java.util.Objects;
 
-import static com.amilesend.tmdb.client.data.tv.TvSeriesApiDataValidator.assertSameTvSeriesList;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -84,7 +84,10 @@ public class TvSeriesListsApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameTvSeriesList(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        TvSeriesApiDataValidator::assertSameTvSeries),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }

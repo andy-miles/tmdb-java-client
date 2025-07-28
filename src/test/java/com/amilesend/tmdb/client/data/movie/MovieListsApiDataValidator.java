@@ -23,9 +23,10 @@ import com.amilesend.tmdb.client.model.movie.list.GetUpcomingResponse;
 import com.amilesend.tmdb.client.model.movie.type.Movie;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -68,23 +69,12 @@ public class MovieListsApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameMovies(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        MovieListsApiDataValidator::assertSameMovie),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getResults(), actual.getResults()));
-    }
-
-    public static void assertSameMovies(
-            final List<Movie> expected,
-            final List<Movie> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameMovie(expected.get(i), actual.get(i));
-        }
     }
 
     public static void assertSameMovie(final Movie expected, final Movie actual) {
@@ -94,6 +84,7 @@ public class MovieListsApiDataValidator {
         }
 
         assertAll(
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
@@ -106,7 +97,6 @@ public class MovieListsApiDataValidator {
                 () -> assertEquals(expected.getTitle(), actual.getTitle()),
                 () -> assertEquals(expected.getVideo(), actual.getVideo()),
                 () -> assertEquals(expected.getVoteAverage(), actual.getVoteAverage(), 0.01D),
-                () -> assertEquals(expected.getVoteCount(), actual.getVoteCount()),
-                () -> assertEquals(expected.getId(), actual.getId()));
+                () -> assertEquals(expected.getVoteCount(), actual.getVoteCount()));
     }
 }

@@ -21,9 +21,11 @@ import com.amilesend.tmdb.client.model.list.GetListDetailsResponse;
 import com.amilesend.tmdb.client.model.list.type.ListItem;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -39,27 +41,14 @@ public class ListsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getCreatedBy(), actual.getCreatedBy()),
                 () -> assertEquals(expected.getDescription(), actual.getDescription()),
                 () -> assertEquals(expected.getFavoriteCount(), actual.getFavoriteCount()),
-                () -> assertSameListItems(expected.getItems(), actual.getItems()),
+                () -> validateListOf(expected.getItems(), actual.getItems(), ListsApiDataValidator::assertSameListItem),
                 () -> assertEquals(expected.getItemCount(), actual.getItemCount()),
                 () -> assertEquals(expected.getLanguageCode(), actual.getLanguageCode()),
                 () -> assertEquals(expected.getPosterPath(), actual.getPosterPath()));
-    }
-
-    private static void assertSameListItems(final List<ListItem> expected, final List<ListItem> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size();  ++i) {
-            assertSameListItem(expected.get(i), actual.get(i));
-        }
     }
 
     private static void assertSameListItem(final ListItem expected, final ListItem actual) {
@@ -69,7 +58,7 @@ public class ListsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getOriginalLanguage(), actual.getOriginalLanguage()),

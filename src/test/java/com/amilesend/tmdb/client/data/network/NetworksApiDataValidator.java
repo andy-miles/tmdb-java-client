@@ -23,9 +23,11 @@ import com.amilesend.tmdb.client.model.network.GetNetworkDetailsResponse;
 import com.amilesend.tmdb.client.model.type.ImageResource;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -45,8 +47,7 @@ public class NetworksApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getHeadquarters(), actual.getHeadquarters()),
                 () -> assertEquals(expected.getOriginCountry(), actual.getOriginCountry()),
                 () -> assertEquals(expected.getLogoPath(), actual.getLogoPath()),
@@ -66,7 +67,7 @@ public class NetworksApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getResults(), actual.getResults()));
     }
 
@@ -81,20 +82,11 @@ public class NetworksApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameImageResources(expected.getLogos(), actual.getLogos()));
-    }
-
-    private static void assertSameImageResources(final List<ImageResource> expected, final List<ImageResource> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameImageResource(expected.get(i), actual.get(i));
-        }
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getLogos(),
+                        actual.getLogos(),
+                        NetworksApiDataValidator::assertSameImageResource));
     }
 
     private static void assertSameImageResource(final ImageResource expected, final ImageResource actual) {
@@ -104,7 +96,7 @@ public class NetworksApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getFilePath(), actual.getFilePath()),
                 () -> assertEquals(expected.getHeight(), actual.getHeight()),
                 () -> assertEquals(expected.getVoteCount(), actual.getVoteCount()),

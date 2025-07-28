@@ -17,6 +17,7 @@
  */
 package com.amilesend.tmdb.client.data.movie;
 
+import com.amilesend.tmdb.client.data.DataValidatorHelper;
 import com.amilesend.tmdb.client.model.movie.GetAccountStatesResponse;
 import com.amilesend.tmdb.client.model.movie.GetAlternativeTitlesResponse;
 import com.amilesend.tmdb.client.model.movie.GetChangesResponse;
@@ -41,16 +42,17 @@ import com.amilesend.tmdb.client.model.type.CastCredit;
 import com.amilesend.tmdb.client.model.type.Change;
 import com.amilesend.tmdb.client.model.type.ChangeItem;
 import com.amilesend.tmdb.client.model.type.CrewCredit;
-import com.amilesend.tmdb.client.model.type.Keyword;
 import com.amilesend.tmdb.client.model.type.MediaListInfo;
 import com.amilesend.tmdb.client.model.type.ProductionCompany;
 import com.amilesend.tmdb.client.model.type.Review;
 import com.amilesend.tmdb.client.model.type.Video;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -69,12 +71,16 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
+                () -> validateResource(expected, actual),
                 () -> assertSameMovieCollection(expected.getBelongsToCollection(), actual.getBelongsToCollection()),
                 () -> assertEquals(expected.getBudget(), actual.getBudget()),
                 () -> assertEquals(expected.getGenres(), actual.getGenres()),
                 () -> assertEquals(expected.getHomepage(), actual.getHomepage()),
                 () -> assertEquals(expected.getImdbId(), actual.getImdbId()),
-                () -> assertSameProductionCompanies(expected.getProductionCompanies(), actual.getProductionCompanies()),
+                () -> validateListOf(
+                        expected.getProductionCompanies(),
+                        actual.getProductionCompanies(),
+                        MoviesApiDataValidator::assertSameProductionCompany),
                 () -> assertEquals(expected.getProductionCountries(), actual.getProductionCountries()),
                 () -> assertEquals(expected.getRevenue(), actual.getRevenue()),
                 () -> assertEquals(expected.getRuntime(), actual.getRuntime()),
@@ -92,35 +98,19 @@ public class MoviesApiDataValidator {
                 () -> assertEquals(expected.getTitle(), actual.getTitle()),
                 () -> assertEquals(expected.isVideo(), actual.isVideo()),
                 () -> assertEquals(expected.getVoteAverage(), actual.getVoteAverage(), 0.01D),
-                () -> assertEquals(expected.getVoteCount(), actual.getVoteCount()),
-                () -> assertEquals(expected.getId(), actual.getId()));
+                () -> assertEquals(expected.getVoteCount(), actual.getVoteCount()));
     }
 
-    public static void assertSameProductionCompanies(
-            final List<ProductionCompany> expected,
-            final List<ProductionCompany> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameProductionCompany(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameProductionCompany(final ProductionCompany expected, final ProductionCompany actual) {
+    public static void assertSameProductionCompany(final ProductionCompany expected, final ProductionCompany actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getLogoPath(), actual.getLogoPath()),
-                () -> assertEquals(expected.getOriginCountry(), actual.getOriginCountry()),
-                () -> assertEquals(expected.getName(), actual.getName()),
-                () -> assertEquals(expected.getId(), actual.getId()));
+                () -> assertEquals(expected.getOriginCountry(), actual.getOriginCountry()));
     }
 
     private static void assertSameMovieCollection(final MovieCollection expected, final MovieCollection actual) {
@@ -130,10 +120,9 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getPosterPath(), actual.getPosterPath()),
-                () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
-                () -> assertEquals(expected.getName(), actual.getName()),
-                () -> assertEquals(expected.getId(), actual.getId()));
+                () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()));
     }
 
     /////////////////////////////
@@ -149,10 +138,10 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getRated(), actual.getRated()),
                 () -> assertEquals(expected.getFavorite(), actual.getFavorite()),
-                () -> assertEquals(expected.getWatchlist(), actual.getWatchlist()),
-                () -> assertEquals(expected.getId(), actual.getId()));
+                () -> assertEquals(expected.getWatchlist(), actual.getWatchlist()));
     }
 
     /////////////////////////////////
@@ -168,7 +157,7 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getTitles(), actual.getTitles()));
     }
 
@@ -179,27 +168,10 @@ public class MoviesApiDataValidator {
     public static void assertSameGetChangesResponse(
             final GetChangesResponse expected,
             final GetChangesResponse actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertSameChanges(expected.getChanges(), actual.getChanges());
+        validateListOf(expected.getChanges(), actual.getChanges(), MoviesApiDataValidator::assertSameChange);
     }
 
-    public static void assertSameChanges(final List<Change<Poster>> expected, final List<Change<Poster>> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameChange(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameChange(final Change<Poster> expected, final Change<Poster> actual) {
+    public static void assertSameChange(final Change<Poster> expected, final Change<Poster> actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
@@ -207,21 +179,10 @@ public class MoviesApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getKey(), actual.getKey()),
-                () -> assertSameChangeItems(expected.getItems(), actual.getItems()));
-    }
-
-    private static void assertSameChangeItems(
-            final List<ChangeItem<Poster>> expected,
-            final List<ChangeItem<Poster>> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameChangeItem(expected.get(i), actual.get(i));
-        }
+                () -> validateListOf(
+                        expected.getItems(),
+                        actual.getItems(),
+                        MoviesApiDataValidator::assertSameChangeItem));
     }
 
     public static void assertSameChangeItem(final ChangeItem<?> expected, final ChangeItem<?> actual) {
@@ -231,7 +192,7 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAction(), actual.getAction()),
                 () -> assertEquals(expected.getTime(), actual.getTime()),
                 () -> assertEquals(expected.getLanguageCode(), actual.getLanguageCode()),
@@ -253,33 +214,25 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameCastCredits(expected.getCast(), actual.getCast()),
-                () -> assertSameCrewCredits(expected.getCrew(), actual.getCrew()));
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getCast(),
+                        actual.getCast(),
+                        MoviesApiDataValidator::assertSameCastCredit),
+                () -> validateListOf(
+                        expected.getCrew(),
+                        actual.getCrew(),
+                        MoviesApiDataValidator::assertSameCrewCredit));
     }
 
-
-    public static void assertSameCastCredits(final List<CastCredit> expected, final List<CastCredit> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameCastCredit(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameCastCredit(final CastCredit expected, final CastCredit actual) {
+    public static void assertSameCastCredit(final CastCredit expected, final CastCredit actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getOriginalName(), actual.getOriginalName()),
                 () -> assertEquals(expected.getPopularity(), actual.getPopularity(), 0.01D),
@@ -292,27 +245,14 @@ public class MoviesApiDataValidator {
                 () -> assertEquals(expected.getOrder(), actual.getOrder()));
     }
 
-    public static void assertSameCrewCredits(final List<CrewCredit> expected, final List<CrewCredit> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameCrewCredit(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameCrewCredit(final CrewCredit expected, final CrewCredit actual) {
+    public void assertSameCrewCredit(final CrewCredit expected, final CrewCredit actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getOriginalName(), actual.getOriginalName()),
                 () -> assertEquals(expected.getPopularity(), actual.getPopularity(), 0.01D),
@@ -337,6 +277,7 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getId(), actual.getId()),
                 () -> assertEquals(expected.getImdbId(), actual.getImdbId()),
                 () -> assertEquals(expected.getWikidataId(), actual.getWikidataId()),
@@ -356,7 +297,7 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getBackdrops(), actual.getBackdrops()),
                 () -> assertEquals(expected.getLogos(), actual.getLogos()),
                 () -> assertEquals(expected.getPosters(), actual.getPosters()));
@@ -375,31 +316,11 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameKeywords(expected.getKeywords(), actual.getKeywords()));
-    }
-
-    public static void assertSameKeywords(final List<Keyword> expected, final List<Keyword> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameKeyword(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameKeyword(final Keyword expected, final Keyword actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()));
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getKeywords(),
+                        actual.getKeywords(),
+                        DataValidatorHelper::validateNamedResource));
     }
 
     /////////////////////
@@ -413,35 +334,23 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameMediaListInfoLists(expected.getResults(), actual.getResults()),
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        MoviesApiDataValidator::assertSameMediaListInfoList),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }
 
-    public static void assertSameMediaListInfoLists(
-            final List<MediaListInfo> expected,
-            final List<MediaListInfo> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameMediaListInfoList(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameMediaListInfoList(final MediaListInfo expected, final MediaListInfo actual) {
+    public static void assertSameMediaListInfoList(final MediaListInfo expected, final MediaListInfo actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getDescription(), actual.getDescription()),
                 () -> assertEquals(expected.getFavoriteCount(), actual.getFavoriteCount()),
                 () -> assertEquals(expected.getItemCount(), actual.getItemCount()),
@@ -462,12 +371,16 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
+                () -> validateResource(expected, actual),
                 () -> assertSameMovieCollection(expected.getBelongsToCollection(), actual.getBelongsToCollection()),
                 () -> assertEquals(expected.getBudget(), actual.getBudget()),
                 () -> assertEquals(expected.getGenres(), actual.getGenres()),
                 () -> assertEquals(expected.getHomepage(), actual.getHomepage()),
                 () -> assertEquals(expected.getImdbId(), actual.getImdbId()),
-                () -> assertSameProductionCompanies(expected.getProductionCompanies(), actual.getProductionCompanies()),
+                () -> validateListOf(
+                        expected.getProductionCompanies(),
+                        actual.getProductionCompanies(),
+                        MoviesApiDataValidator::assertSameProductionCompany),
                 () -> assertEquals(expected.getProductionCountries(), actual.getProductionCountries()),
                 () -> assertEquals(expected.getRevenue(), actual.getRevenue()),
                 () -> assertEquals(expected.getRuntime(), actual.getRuntime()),
@@ -485,8 +398,7 @@ public class MoviesApiDataValidator {
                 () -> assertEquals(expected.getTitle(), actual.getTitle()),
                 () -> assertEquals(expected.isVideo(), actual.isVideo()),
                 () -> assertEquals(expected.getVoteAverage(), actual.getVoteAverage(), 0.01D),
-                () -> assertEquals(expected.getVoteCount(), actual.getVoteCount()),
-                () -> assertEquals(expected.getId(), actual.getId()));
+                () -> assertEquals(expected.getVoteCount(), actual.getVoteCount()));
     }
 
     ///////////////////////////////
@@ -503,21 +415,12 @@ public class MoviesApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameMovies(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        MoviesApiDataValidator::assertSameMovie),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
-    }
-
-    private static void assertSameMovies(final List<Movie> expected, final List<Movie> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameMovie(expected.get(i), actual.get(i));
-        }
     }
 
     private static void assertSameMovie(final Movie expected, final Movie actual) {
@@ -527,7 +430,7 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getOriginalLanguage(), actual.getOriginalLanguage()),
@@ -556,7 +459,7 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getResults(), actual.getResults()));
     }
 
@@ -574,31 +477,22 @@ public class MoviesApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameReviews(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        MoviesApiDataValidator::assertSameReview),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }
 
-    public static void assertSameReviews(final List<Review> expected, final List<Review> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameReview(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameReview(final Review expected, final Review actual) {
+    public static void assertSameReview(final Review expected, final Review actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAuthor(), actual.getAuthor()),
                 () -> assertEquals(expected.getAuthorDetails(), actual.getAuthorDetails()),
                 () -> assertEquals(expected.getContent(), actual.getContent()),
@@ -619,7 +513,10 @@ public class MoviesApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameMovies(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        MoviesApiDataValidator::assertSameMovie),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }
@@ -637,7 +534,7 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getTranslations(), actual.getTranslations()));
     }
 
@@ -654,33 +551,23 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameVideos(expected.getResults(), actual.getResults()));
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        MoviesApiDataValidator::assertSameVideo));
     }
 
-    public static void assertSameVideos(final List<Video> expected, final List<Video> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameVideo(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameVideo(final Video expected, final Video actual) {
+    public static void assertSameVideo(final Video expected, final Video actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getLanguageCode(), actual.getLanguageCode()),
                 () -> assertEquals(expected.getCountryCode(), actual.getCountryCode()),
-                () -> assertEquals(expected.getName(), actual.getName()),
                 () -> assertEquals(expected.getKey(), actual.getKey()),
                 () -> assertEquals(expected.getSite(), actual.getSite()),
                 () -> assertEquals(expected.getType(), actual.getType()),
@@ -701,7 +588,7 @@ public class MoviesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getResults(), actual.getResults()));
     }
 }

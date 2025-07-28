@@ -23,9 +23,11 @@ import com.amilesend.tmdb.client.model.collection.GetTranslationsResponse;
 import com.amilesend.tmdb.client.model.collection.type.CollectionPart;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -37,31 +39,23 @@ public class CollectionsApiDataValidator {
     // CollectionDetails
     //////////////////////
 
-    public static void assertSameCollectionDetails(final GetCollectionDetailsResponse expected, final GetCollectionDetailsResponse actual) {
+    public static void assertSameCollectionDetails(
+            final GetCollectionDetailsResponse expected,
+            final GetCollectionDetailsResponse actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getOverview(), actual.getOverview()),
                 () -> assertEquals(expected.getPosterPath(), actual.getPosterPath()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
-                () -> assertSameParts(expected.getParts(), actual.getParts()));
-    }
-
-    private static void assertSameParts(final List<CollectionPart> expected, List<CollectionPart> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSamePart(expected.get(i), actual.get(i));
-        }
+                () -> validateListOf(
+                        expected.getParts(),
+                        actual.getParts(),
+                        CollectionsApiDataValidator::assertSamePart));
     }
 
     private static void assertSamePart(final CollectionPart expected, final CollectionPart actual) {
@@ -71,7 +65,7 @@ public class CollectionsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getTitle(), actual.getTitle()),
@@ -92,14 +86,16 @@ public class CollectionsApiDataValidator {
     // Images
     ///////////
 
-    public static void assertSameImages(final GetCollectionImagesResponse expected, final GetCollectionImagesResponse actual) {
+    public static void assertSameImages(
+            final GetCollectionImagesResponse expected,
+            final GetCollectionImagesResponse actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getBackdrops(), actual.getBackdrops()),
                 () -> assertEquals(expected.getPosters(), actual.getPosters()));
     }
@@ -108,14 +104,16 @@ public class CollectionsApiDataValidator {
     // Translations
     /////////////////
 
-    public static void assertSameTranslations(final GetTranslationsResponse expected, final GetTranslationsResponse actual) {
+    public static void assertSameTranslations(
+            final GetTranslationsResponse expected,
+            final GetTranslationsResponse actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected,actual),
                 () -> assertEquals(expected.getTranslations(), actual.getTranslations()));
     }
 }

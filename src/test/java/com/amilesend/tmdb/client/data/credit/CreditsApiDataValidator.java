@@ -23,23 +23,27 @@ import com.amilesend.tmdb.client.model.credit.type.Person;
 import com.amilesend.tmdb.client.model.credit.type.Season;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 @UtilityClass
 public class CreditsApiDataValidator {
-    public static void assertSameCreditDetails(final GetCreditDetailsResponse expected, final GetCreditDetailsResponse actual) {
+    public static void assertSameCreditDetails(
+            final GetCreditDetailsResponse expected,
+            final GetCreditDetailsResponse actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getCreditType(), actual.getCreditType()),
                 () -> assertEquals(expected.getDepartment(), actual.getDepartment()),
                 () -> assertEquals(expected.getJob(), actual.getJob()),
@@ -54,10 +58,9 @@ public class CreditsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
-                () -> assertEquals(expected.getName(), actual.getName()),
                 () -> assertEquals(expected.getOriginalLanguage(), actual.getOriginalLanguage()),
                 () -> assertEquals(expected.getOriginalName(), actual.getOriginalName()),
                 () -> assertEquals(expected.getOverview(), actual.getOverview()),
@@ -70,7 +73,10 @@ public class CreditsApiDataValidator {
                 () -> assertEquals(expected.getVoteCount(), actual.getVoteCount()),
                 () -> assertEquals(expected.getOriginCountry(), actual.getOriginCountry()),
                 () -> assertEquals(expected.getCharacter(), actual.getCharacter()),
-                () -> assertSameSeasonList(expected.getSeasons(), actual.getSeasons()));
+                () -> validateListOf(
+                        expected.getSeasons(),
+                        actual.getSeasons(),
+                        CreditsApiDataValidator::assertSameSeason));
     }
 
     private static void assertSamePersonCredit(final Person expected, final Person actual) {
@@ -80,27 +86,14 @@ public class CreditsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
-                () -> assertEquals(expected.getName(), actual.getName()),
                 () -> assertEquals(expected.getOriginalName(), actual.getOriginalName()),
                 () -> assertEquals(expected.getMediaType(), actual.getMediaType()),
                 () -> assertEquals(expected.getPopularity(), actual.getPopularity(), 0.01D),
                 () -> assertEquals(expected.getGender(), actual.getGender()),
                 () -> assertEquals(expected.getKnownForDepartment(), actual.getKnownForDepartment()),
                 () -> assertEquals(expected.getProfilePath(), actual.getProfilePath()));
-    }
-
-    private static void assertSameSeasonList(final List<Season> expected, final List<Season> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameSeason(expected.get(i), actual.get(i));
-        }
     }
 
     private static void assertSameSeason(final Season expected, final Season actual) {
@@ -110,10 +103,9 @@ public class CreditsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAirDate(), actual.getAirDate()),
                 () -> assertEquals(expected.getEpisodeCount(), actual.getEpisodeCount()),
-                () -> assertEquals(expected.getName(), actual.getName()),
                 () -> assertEquals(expected.getOverview(), actual.getOverview()),
                 () -> assertEquals(expected.getPosterPath(), actual.getPosterPath()),
                 () -> assertEquals(expected.getSeasonNumber(), actual.getSeasonNumber()),

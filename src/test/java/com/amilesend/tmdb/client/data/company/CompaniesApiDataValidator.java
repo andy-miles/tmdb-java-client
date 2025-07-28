@@ -23,9 +23,11 @@ import com.amilesend.tmdb.client.model.company.GetCompanyImagesResponse;
 import com.amilesend.tmdb.client.model.type.ImageResource;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -37,19 +39,20 @@ public class CompaniesApiDataValidator {
     // CompanyDetails
     ///////////////////
 
-    public static void assertSameCompanyDetails(final GetCompanyDetailsResponse expected, final GetCompanyDetailsResponse actual) {
+    public static void assertSameCompanyDetails(
+            final GetCompanyDetailsResponse expected,
+            final GetCompanyDetailsResponse actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getDescription(), actual.getDescription()),
                 () -> assertEquals(expected.getHeadquarters(), actual.getHeadquarters()),
                 () -> assertEquals(expected.getHomepage(), actual.getHomepage()),
                 () -> assertEquals(expected.getLogoPath(), actual.getLogoPath()),
-                () -> assertEquals(expected.getName(), actual.getName()),
                 () -> assertEquals(expected.getOriginCountry(), actual.getOriginCountry()),
                 () -> assertEquals(expected.getParentCompany(), actual.getParentCompany()));
     }
@@ -58,14 +61,16 @@ public class CompaniesApiDataValidator {
     // AlternativeNames
     /////////////////////
 
-    public static void assertSameAlternativeNames(final GetAlternativeNamesResponse expected, final GetAlternativeNamesResponse actual) {
+    public static void assertSameAlternativeNames(
+            final GetAlternativeNamesResponse expected,
+            final GetAlternativeNamesResponse actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getResults(), actual.getResults()));
     }
 
@@ -73,31 +78,21 @@ public class CompaniesApiDataValidator {
     // CompanyImages
     //////////////////
 
-    public static void assertSameCompanyImages(final GetCompanyImagesResponse expected, final GetCompanyImagesResponse actual) {
+    public static void assertSameCompanyImages(
+            final GetCompanyImagesResponse expected,
+            final GetCompanyImagesResponse actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameCompanyImagesList(expected.getLogos(), actual.getLogos()));
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getLogos(),
+                        actual.getLogos(),
+                        CompaniesApiDataValidator::assertSameCompanyImage));
     }
-
-    private static void assertSameCompanyImagesList(
-            final List<ImageResource> expected,
-            final List<ImageResource> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameCompanyImage(expected.get(i), actual.get(i));
-        }
-    }
-
 
     private static void assertSameCompanyImage(final ImageResource expected, final ImageResource actual) {
         if (Objects.isNull(expected)) {
@@ -106,7 +101,7 @@ public class CompaniesApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAspectRatio(), actual.getAspectRatio(), 0.01D),
                 () -> assertEquals(expected.getFilePath(), actual.getFilePath()),
                 () -> assertEquals(expected.getHeight(), actual.getHeight()),

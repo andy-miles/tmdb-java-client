@@ -22,9 +22,11 @@ import com.amilesend.tmdb.client.model.people.lists.type.Media;
 import com.amilesend.tmdb.client.model.people.lists.type.PopularPerson;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -47,21 +49,10 @@ public class PeopleListsApiDataValidator {
                 () -> assertEquals(expected.getPage(), actual.getPage()),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()),
-                () -> assertSamePoplarPersons(expected.getResults(), actual.getResults()));
-    }
-
-    private static void assertSamePoplarPersons(
-            final List<PopularPerson> expected,
-            final List<PopularPerson> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSamePopularPerson(expected.get(i), actual.get(i));
-        }
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        PeopleListsApiDataValidator::assertSamePopularPerson));
     }
 
     private static void assertSamePopularPerson(final PopularPerson expected, final PopularPerson actual) {
@@ -71,26 +62,16 @@ public class PeopleListsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getPopularity(), actual.getPopularity(),  0.01D),
                 () -> assertEquals(expected.getGender(), actual.getGender()),
                 () -> assertEquals(expected.getKnownForDepartment(), actual.getKnownForDepartment()),
                 () -> assertEquals(expected.getProfilePath(), actual.getProfilePath()),
-                () -> assertSameMediaList(expected.getKnownFor(), actual.getKnownFor()));
-    }
-
-    private static void assertSameMediaList(final List<Media> expected, final List<Media> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameMedia(expected.get(i), actual.get(i));
-        }
+                () -> validateListOf(
+                        expected.getKnownFor(),
+                        actual.getKnownFor(),
+                        PeopleListsApiDataValidator::assertSameMedia));
     }
 
     private static void assertSameMedia(final Media expected, final Media actual) {
@@ -100,7 +81,7 @@ public class PeopleListsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),

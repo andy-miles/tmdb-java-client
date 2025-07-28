@@ -22,9 +22,10 @@ import com.amilesend.tmdb.client.model.tv.episodes.groups.type.GroupEpisode;
 import com.amilesend.tmdb.client.model.tv.episodes.groups.type.TvEpisodeGroup;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
 import static com.amilesend.tmdb.client.data.tv.TvSeriesApiDataValidator.assertSameTvSeriesNetwork;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -41,26 +42,16 @@ public class TvEpisodeGroupsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getDescription(), actual.getDescription()),
                 () -> assertEquals(expected.getEpisodeCount(), actual.getEpisodeCount()),
                 () -> assertEquals(expected.getGroupCount(), actual.getGroupCount()),
-                () -> assertSameTvEpisodeGroups(expected.getGroups(), actual.getGroups()),
+                () -> validateListOf(
+                        expected.getGroups(),
+                        actual.getGroups(),
+                        TvEpisodeGroupsApiDataValidator::assertSameTvEpisodeGroup),
                 () -> assertSameTvSeriesNetwork(expected.getNetwork(), actual.getNetwork()),
                 () -> assertEquals(expected.getType(), actual.getType()));
-    }
-
-    private static void assertSameTvEpisodeGroups(final List<TvEpisodeGroup> expected, final List<TvEpisodeGroup> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameTvEpisodeGroup(expected.get(i), actual.get(i));
-        }
     }
 
     private static void assertSameTvEpisodeGroup(final TvEpisodeGroup expected, final TvEpisodeGroup actual) {
@@ -70,22 +61,12 @@ public class TvEpisodeGroupsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getLocked(), actual.getLocked()),
-                () -> assertSameGroupEpisodes(expected.getEpisodes(), actual.getEpisodes()));
-    }
-
-    private static void assertSameGroupEpisodes(final List<GroupEpisode> expected, final List<GroupEpisode> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameGroupEpisode(expected.get(i), actual.get(i));
-        }
+                () -> validateListOf(
+                        expected.getEpisodes(),
+                        actual.getEpisodes(),
+                        TvEpisodeGroupsApiDataValidator::assertSameGroupEpisode));
     }
 
     private static void assertSameGroupEpisode(final GroupEpisode expected, final GroupEpisode actual) {
@@ -95,8 +76,7 @@ public class TvEpisodeGroupsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAirDate(), actual.getAirDate()),
                 () -> assertEquals(expected.getEpisodeNumber(), actual.getEpisodeNumber()),
                 () -> assertEquals(expected.getOverview(), actual.getOverview()),

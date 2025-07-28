@@ -22,6 +22,7 @@ import lombok.experimental.UtilityClass;
 
 import java.util.Objects;
 
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -37,7 +38,7 @@ public class ReviewsApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAuthor(), actual.getAuthor()),
                 () -> assertEquals(expected.getAuthorDetails(), actual.getAuthorDetails()),
                 () -> assertEquals(expected.getContent(), actual.getContent()),

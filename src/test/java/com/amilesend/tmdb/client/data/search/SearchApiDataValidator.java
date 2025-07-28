@@ -17,6 +17,7 @@
  */
 package com.amilesend.tmdb.client.data.search;
 
+import com.amilesend.tmdb.client.data.DataValidatorHelper;
 import com.amilesend.tmdb.client.model.search.SearchCollectionsResponse;
 import com.amilesend.tmdb.client.model.search.SearchCompaniesResponse;
 import com.amilesend.tmdb.client.model.search.SearchKeywordsResponse;
@@ -38,7 +39,9 @@ import lombok.experimental.UtilityClass;
 import java.util.List;
 import java.util.Objects;
 
-import static com.amilesend.tmdb.client.data.movie.MoviesApiDataValidator.assertSameKeywords;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -61,23 +64,12 @@ public class SearchApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameCollectionSearchResults(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        SearchApiDataValidator::assertSameCollectionSearchResult),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
-    }
-
-    private static void assertSameCollectionSearchResults(
-            final List<CollectionSearchResult> expected,
-            final List<CollectionSearchResult> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameCollectionSearchResult(expected.get(i), actual.get(i));
-        }
     }
 
     private static void assertSameCollectionSearchResult(
@@ -89,8 +81,7 @@ public class SearchApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getOriginalLanguage(), actual.getOriginalLanguage()),
@@ -115,21 +106,10 @@ public class SearchApiDataValidator {
                 () -> assertEquals(expected.getPage(), actual.getPage()),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()),
-                () -> assertSameCompanySearchResults(expected.getResults(), actual.getResults()));
-    }
-
-    private static void assertSameCompanySearchResults(
-            final List<CompanySearchResult> expected,
-            final List<CompanySearchResult> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameCompanySearchResult(expected.get(i), actual.get(i));
-        }
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        SearchApiDataValidator::assertSameCompanySearchResult));
     }
 
     private static void assertSameCompanySearchResult(
@@ -141,8 +121,7 @@ public class SearchApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getLogoPath(), actual.getLogoPath()),
                 () -> assertEquals(expected.getOriginCountry(), actual.getOriginCountry()));
     }
@@ -163,7 +142,10 @@ public class SearchApiDataValidator {
                 () -> assertEquals(expected.getPage(), actual.getPage()),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()),
-                () -> assertSameKeywords(expected.getResults(), actual.getResults()));
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        DataValidatorHelper::validateNamedResource));
     }
 
     /////////////////////////
@@ -180,33 +162,24 @@ public class SearchApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameMovieSearchResults(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        SearchApiDataValidator::assertSameMovieSearchResult),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }
 
-    public static void assertSameMovieSearchResults(
-            final List<MovieSearchResult> expected,
-            final List<MovieSearchResult> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameMovieSearchResult(expected.get(i), actual.get(i));
-        }
-    }
-
-    public static void assertSameMovieSearchResult(final MovieSearchResult expected, final MovieSearchResult actual) {
+    public static void assertSameMovieSearchResult(
+            final MovieSearchResult expected,
+            final MovieSearchResult actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -256,34 +229,24 @@ public class SearchApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSamePersonSearchResults(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        SearchApiDataValidator::assertSamePersonSearchResult),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
     }
 
-    public static void assertSamePersonSearchResults(
-            final List<PersonSearchResult> expected,
-            final List<PersonSearchResult> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSamePersonSearchResult(expected.get(i), actual.get(i));
-        }
-    }
-
-    public static void assertSamePersonSearchResult(final PersonSearchResult expected, final PersonSearchResult actual) {
+    public static void assertSamePersonSearchResult(
+            final PersonSearchResult expected,
+            final PersonSearchResult actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getOriginalName(), actual.getOriginalName()),
                 () -> assertEquals(expected.getPopularity(), actual.getPopularity(), 0.01D),
@@ -324,7 +287,7 @@ public class SearchApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -351,7 +314,7 @@ public class SearchApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -407,23 +370,12 @@ public class SearchApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getPage(), actual.getPage()),
-                () -> assertSameTvSeriesSearchResults(expected.getResults(), actual.getResults()),
+                () -> validateListOf(
+                        expected.getResults(),
+                        actual.getResults(),
+                        SearchApiDataValidator::assertSameTvSeriesSearchResult),
                 () -> assertEquals(expected.getTotalPages(), actual.getTotalPages()),
                 () -> assertEquals(expected.getTotalResults(), actual.getTotalResults()));
-    }
-
-    public static void assertSameTvSeriesSearchResults(
-            final List<TvSeriesSearchResult> expected,
-            final List<TvSeriesSearchResult> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameTvSeriesSearchResult(expected.get(i), actual.get(i));
-        }
     }
 
     public static void assertSameTvSeriesSearchResult(
@@ -435,8 +387,7 @@ public class SearchApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getOriginalLanguage(), actual.getOriginalLanguage()),

@@ -17,17 +17,15 @@
  */
 package com.amilesend.tmdb.client.data.genre;
 
+import com.amilesend.tmdb.client.data.DataValidatorHelper;
 import com.amilesend.tmdb.client.model.genre.GetMovieGenresResponse;
 import com.amilesend.tmdb.client.model.genre.GetTvGenresResponse;
 import com.amilesend.tmdb.client.model.genre.type.GetGenresResultBase;
-import com.amilesend.tmdb.client.model.type.Genre;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 @UtilityClass
@@ -52,29 +50,6 @@ public class GenresApiDataValidator {
             return;
         }
 
-        assertSameGenres(expected.getGenres(), actual.getGenres());
-    }
-
-    public static void assertSameGenres(final List<Genre> expected, final List<Genre> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size();  ++i) {
-            assertSameGenre(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameGenre(final Genre expected, final Genre actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()));
+        validateListOf(expected.getGenres(), actual.getGenres(), DataValidatorHelper::validateNamedResource);
     }
 }

@@ -17,17 +17,16 @@
  */
 package com.amilesend.tmdb.client.data.find;
 
+import com.amilesend.tmdb.client.data.search.SearchApiDataValidator;
 import com.amilesend.tmdb.client.model.find.FindByIdResponse;
 import com.amilesend.tmdb.client.model.find.type.TvEpisodeSearchResult;
 import com.amilesend.tmdb.client.model.find.type.TvSeasonSearchResult;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
-import static com.amilesend.tmdb.client.data.search.SearchApiDataValidator.assertSameMovieSearchResults;
-import static com.amilesend.tmdb.client.data.search.SearchApiDataValidator.assertSamePersonSearchResults;
-import static com.amilesend.tmdb.client.data.search.SearchApiDataValidator.assertSameTvSeriesSearchResults;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -47,25 +46,26 @@ public class FindApiDataValidator {
         }
 
         assertAll(
-                () -> assertSameMovieSearchResults(expected.getMovieResults(), actual.getMovieResults()),
-                () -> assertSamePersonSearchResults(expected.getPersonResults(), actual.getPersonResults()),
-                () -> assertSameTvSeriesSearchResults(expected.getTvResults(), actual.getTvResults()),
-                () -> assertSameTvEpisodeSearchResults(expected.getTvEpisodeResults(), actual.getTvEpisodeResults()),
-                () -> assertSameTvSeasonSearchResults(expected.getTvSeasonResults(), actual.getTvSeasonResults()));
-    }
-
-    private static void assertSameTvEpisodeSearchResults(
-            final List<TvEpisodeSearchResult> expected,
-            final List<TvEpisodeSearchResult> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size();  ++i) {
-            assertSameTvEpisodeSearchResult(expected.get(i), actual.get(i));
-        }
+                () -> validateListOf(
+                        expected.getMovieResults(),
+                        actual.getMovieResults(),
+                        SearchApiDataValidator::assertSameMovieSearchResult),
+                () -> validateListOf(
+                        expected.getPersonResults(),
+                        actual.getPersonResults(),
+                        SearchApiDataValidator::assertSamePersonSearchResult),
+                () -> validateListOf(
+                        expected.getTvResults(),
+                        actual.getTvResults(),
+                        SearchApiDataValidator::assertSameTvSeriesSearchResult),
+                () -> validateListOf(
+                        expected.getTvEpisodeResults(),
+                        actual.getTvEpisodeResults(),
+                        FindApiDataValidator::assertSameTvEpisodeSearchResult),
+                () -> validateListOf(
+                        expected.getTvSeasonResults(),
+                        actual.getTvSeasonResults(),
+                        FindApiDataValidator::assertSameTvSeasonSearchResult));
     }
 
     private static void assertSameTvEpisodeSearchResult(
@@ -77,8 +77,7 @@ public class FindApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAirDate(), actual.getAirDate()),
                 () -> assertEquals(expected.getEpisodeNumber(), actual.getEpisodeNumber()),
                 () -> assertEquals(expected.getOverview(), actual.getOverview()),
@@ -92,20 +91,6 @@ public class FindApiDataValidator {
                 () -> assertEquals(expected.getShowId(), actual.getShowId()));
     }
 
-    private static void assertSameTvSeasonSearchResults(
-            final List<TvSeasonSearchResult> expected,
-            final List<TvSeasonSearchResult> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size();  ++i) {
-            assertSameTvSeasonSearchResult(expected.get(i), actual.get(i));
-        }
-    }
-
     private static void assertSameTvSeasonSearchResult(
             final TvSeasonSearchResult expected,
             final TvSeasonSearchResult actual) {
@@ -115,8 +100,7 @@ public class FindApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getOverview(), actual.getOverview()),
                 () -> assertEquals(expected.getPosterPath(), actual.getPosterPath()),
                 () -> assertEquals(expected.getMediaType(), actual.getMediaType()),

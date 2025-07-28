@@ -17,6 +17,7 @@
  */
 package com.amilesend.tmdb.client.data.people;
 
+import com.amilesend.tmdb.client.data.movie.MoviesApiDataValidator;
 import com.amilesend.tmdb.client.model.people.GetChangesResponse;
 import com.amilesend.tmdb.client.model.people.GetCombinedCreditsResponse;
 import com.amilesend.tmdb.client.model.people.GetExternalIDsResponse;
@@ -33,13 +34,13 @@ import com.amilesend.tmdb.client.model.people.type.MovieCrewCredit;
 import com.amilesend.tmdb.client.model.people.type.TvCastCredit;
 import com.amilesend.tmdb.client.model.people.type.TvCrewCredit;
 import com.amilesend.tmdb.client.model.type.Change;
-import com.amilesend.tmdb.client.model.type.ChangeItem;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 
-import static com.amilesend.tmdb.client.data.movie.MoviesApiDataValidator.assertSameChangeItem;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateListOf;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateNamedResource;
+import static com.amilesend.tmdb.client.data.DataValidatorHelper.validateResource;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -58,8 +59,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getAlsoKnownAs(), actual.getAlsoKnownAs()),
                 () -> assertEquals(expected.getBiography(), actual.getBiography()),
@@ -80,27 +80,10 @@ public class PeopleApiDataValidator {
     public static void assertSameGetChangesResponse(
             final GetChangesResponse expected,
             final GetChangesResponse actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertSameChanges(expected.getChanges(), actual.getChanges());
+        validateListOf(expected.getChanges(), actual.getChanges(), PeopleApiDataValidator::assertSameChange);
     }
 
-    public static void assertSameChanges(final List<Change<String>> expected, final List<Change<String>> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameChange(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameChange(final Change<String> expected, final Change<String> actual) {
+    public static void assertSameChange(final Change<String> expected, final Change<String> actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
             return;
@@ -108,21 +91,10 @@ public class PeopleApiDataValidator {
 
         assertAll(
                 () -> assertEquals(expected.getKey(), actual.getKey()),
-                () -> assertSameChangeItems(expected.getItems(), actual.getItems()));
-    }
-
-    private static void assertSameChangeItems(
-            final List<ChangeItem<String>> expected,
-            final List<ChangeItem<String>> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameChangeItem(expected.get(i), actual.get(i));
-        }
+                () -> validateListOf(
+                        expected.getItems(),
+                        actual.getItems(),
+                        MoviesApiDataValidator::assertSameChangeItem));
     }
 
     ///////////////////////////////
@@ -138,23 +110,15 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameCombinedCastCredits(expected.getCast(), actual.getCast()),
-                () -> assertSameCombinedCrewCredits(expected.getCrew(), actual.getCrew()));
-    }
-
-    private static void assertSameCombinedCastCredits(
-            final List<CombinedCastCredit> expected,
-            final List<CombinedCastCredit> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameCombinedCastCredit(expected.get(i), actual.get(i));
-        }
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getCast(),
+                        actual.getCast(),
+                        PeopleApiDataValidator::assertSameCombinedCastCredit),
+                () -> validateListOf(
+                        expected.getCrew(),
+                        actual.getCrew(),
+                        PeopleApiDataValidator::assertSameCombinedCrewCredit));
     }
 
     private static void assertSameCombinedCastCredit(
@@ -166,7 +130,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -186,20 +150,6 @@ public class PeopleApiDataValidator {
                 () -> assertEquals(expected.getMediaType(), actual.getMediaType()));
     }
 
-    private static void assertSameCombinedCrewCredits(
-            final List<CombinedCrewCredit> expected,
-            final List<CombinedCrewCredit> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameCombinedCrewCredit(expected.get(i), actual.get(i));
-        }
-    }
-
     private static void assertSameCombinedCrewCredit(
             final CombinedCrewCredit expected,
             final CombinedCrewCredit actual) {
@@ -209,7 +159,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -242,7 +192,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getTvrageId(), actual.getTvrageId()),
                 () -> assertEquals(expected.getWikidataId(), actual.getWikidataId()),
                 () -> assertEquals(expected.getFacebookId(), actual.getFacebookId()),
@@ -265,7 +215,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getProfiles(), actual.getProfiles()));
     }
 
@@ -290,23 +240,15 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameMovieCastCredits(expected.getCast(), actual.getCast()),
-                () -> assertSameMovieCrewCredits(expected.getCrew(), actual.getCrew()));
-    }
-
-    private static void assertSameMovieCastCredits(
-            final List<MovieCastCredit> expected,
-            final List<MovieCastCredit> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameMovieCastCredit(expected.get(i), actual.get(i));
-        }
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getCast(),
+                        actual.getCast(),
+                        PeopleApiDataValidator::assertSameMovieCastCredit),
+                () -> validateListOf(
+                        expected.getCrew(),
+                        actual.getCrew(),
+                        PeopleApiDataValidator::assertSameMovieCrewCredit));
     }
 
     private static void assertSameMovieCastCredit(final MovieCastCredit expected, final MovieCastCredit actual) {
@@ -316,7 +258,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -335,20 +277,6 @@ public class PeopleApiDataValidator {
                 () -> assertEquals(expected.getOrder(), actual.getOrder()));
     }
 
-    private static void assertSameMovieCrewCredits(
-            final List<MovieCrewCredit> expected,
-            final List<MovieCrewCredit> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameMovieCrewCredit(expected.get(i), actual.get(i));
-        }
-    }
-
     private static void assertSameMovieCrewCredit(final MovieCrewCredit expected, final MovieCrewCredit actual) {
         if (Objects.isNull(expected)) {
             assertNull(actual);
@@ -356,7 +284,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -388,23 +316,15 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
-                () -> assertSameTvCastCredits(expected.getCast(), actual.getCast()),
-                () -> assertSameTvCrewCredit(expected.getCrew(), actual.getCrew()));
-    }
-
-    private static void assertSameTvCastCredits(
-            final List<TvCastCredit> expected,
-            final List<TvCastCredit> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameTvCastCredit(expected.get(i), actual.get(i));
-        }
+                () -> validateResource(expected, actual),
+                () -> validateListOf(
+                        expected.getCast(),
+                        actual.getCast(),
+                        PeopleApiDataValidator::assertSameTvCastCredit),
+                () -> validateListOf(
+                        expected.getCrew(),
+                        actual.getCrew(),
+                        PeopleApiDataValidator::assertSameTvCrewCredit));
     }
 
     private static void assertSameTvCastCredit(
@@ -416,7 +336,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -435,20 +355,6 @@ public class PeopleApiDataValidator {
     }
 
     private static void assertSameTvCrewCredit(
-            final List<TvCrewCredit> expected,
-            final List<TvCrewCredit> actual) {
-        if (Objects.isNull(expected)) {
-            assertNull(actual);
-            return;
-        }
-
-        assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); ++i) {
-            assertSameTvCrewCredit(expected.get(i), actual.get(i));
-        }
-    }
-
-    private static void assertSameTvCrewCredit(
             final TvCrewCredit expected,
             final TvCrewCredit actual) {
         if (Objects.isNull(expected)) {
@@ -457,7 +363,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateNamedResource(expected, actual),
                 () -> assertEquals(expected.getAdult(), actual.getAdult()),
                 () -> assertEquals(expected.getBackdropPath(), actual.getBackdropPath()),
                 () -> assertEquals(expected.getGenreIds(), actual.getGenreIds()),
@@ -489,7 +395,7 @@ public class PeopleApiDataValidator {
         }
 
         assertAll(
-                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> validateResource(expected, actual),
                 () -> assertEquals(expected.getTranslations(), actual.getTranslations()));
     }
 }
