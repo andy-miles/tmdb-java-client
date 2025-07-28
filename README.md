@@ -85,7 +85,7 @@ requires these APIs.
    <dependency>
        <groupId>com.amilesend</groupId>
        <artifactId>tmdb-java-client</artifactId>
-       <version>3.2</version>
+       <version>3.2.1</version>
    </dependency>
    ```
 3. Instantiate the client with the read access token:
@@ -182,6 +182,7 @@ or alternatively with [OkHttp's builder](https://square.github.io/okhttp/4.x/okh
 OkHttpClient httpClient = OkHttpClientBuilder.builder()
         .trustManager(myX509TrustManager) // Custom trust manager for self/internally signed SSL/TLS certs
         .hostnameVerifier(myHostnameVerifier) // Custom hostname verification for SSL/TLS endpoints
+        .addInterceptor(myInterceptor) // Custom okhttp interceptor (e.g., logging)
         .proxy(myProxy, myProxyUsername, myProxyPassword) // Proxy config
         .connectTimeout(8000L) // connection timeout in milliseconds
         .readTimeout(5000L) // read timeout in milliseconds
