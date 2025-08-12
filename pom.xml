@@ -146,12 +146,12 @@
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs-annotations</artifactId>
-            <version>${spotbugs.version}</version>
-            <scope>compile</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.spotbugs</groupId>-->
+<!--            <artifactId>spotbugs-annotations</artifactId>-->
+<!--            <version>${spotbugs.version}</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
