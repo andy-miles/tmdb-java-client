@@ -17,12 +17,12 @@
  */
 package com.amilesend.tmdb.client.model.credit;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
 import lombok.Builder;
 import lombok.Data;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * The request for getting credit details.

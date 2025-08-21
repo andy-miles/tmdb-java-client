@@ -17,6 +17,7 @@
  */
 package com.amilesend.tmdb.client.model.tv.series;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.type.ChangesRequestBase;
 import lombok.EqualsAndHashCode;
@@ -25,7 +26,6 @@ import lombok.NonNull;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * The request to retrieve the changes for a TV series.

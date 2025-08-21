@@ -18,13 +18,13 @@
 package com.amilesend.tmdb.client.model.discover.filter;
 
 import com.amilesend.client.connection.RequestException;
+import com.amilesend.client.util.StringUtils;
 import com.amilesend.tmdb.client.model.QueryParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.StringUtils;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;

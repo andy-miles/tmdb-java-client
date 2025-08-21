@@ -17,6 +17,7 @@
  */
 package com.amilesend.tmdb.client.model.guest.type;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.GuestSessionBasedRequest;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.acount.type.PaginatedRequestBase;
@@ -26,7 +27,6 @@ import lombok.NonNull;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Base class to retrieve a list of resources for a guest session.

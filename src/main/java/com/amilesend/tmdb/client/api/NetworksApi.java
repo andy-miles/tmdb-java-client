@@ -18,6 +18,7 @@
 package com.amilesend.tmdb.client.api;
 
 import com.amilesend.client.connection.Connection;
+import com.amilesend.client.util.StringUtils;
 import com.amilesend.tmdb.client.model.list.GetListDetailsRequest;
 import com.amilesend.tmdb.client.model.list.GetListDetailsResponse;
 import com.amilesend.tmdb.client.model.network.GetAlternativeNamesRequest;
@@ -28,7 +29,6 @@ import com.amilesend.tmdb.client.model.network.GetNetworkDetailsRequest;
 import com.amilesend.tmdb.client.model.network.GetNetworkDetailsResponse;
 import com.amilesend.tmdb.client.model.network.type.NetworksRequestBase;
 import lombok.NonNull;
-import org.apache.commons.lang3.StringUtils;
 
 /** TMDB Networks API. */
 public class NetworksApi extends ApiBase {

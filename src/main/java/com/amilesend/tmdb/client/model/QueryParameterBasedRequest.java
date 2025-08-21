@@ -17,8 +17,8 @@
  */
 package com.amilesend.tmdb.client.model;
 
+import com.amilesend.client.util.StringUtils;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.StringUtils;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;

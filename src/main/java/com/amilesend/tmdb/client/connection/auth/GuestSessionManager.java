@@ -18,15 +18,15 @@
 package com.amilesend.tmdb.client.connection.auth;
 
 import com.amilesend.client.connection.ResponseException;
+import com.amilesend.client.util.StringUtils;
+import com.amilesend.client.util.VisibleForTesting;
 import com.amilesend.tmdb.client.api.AuthenticationApi;
 import com.amilesend.tmdb.client.model.auth.CreateGuestSessionResponse;
 import com.amilesend.tmdb.client.model.auth.DeleteSessionRequest;
 import com.amilesend.tmdb.client.model.auth.DeleteSessionResponse;
-import com.google.common.annotations.VisibleForTesting;
 import lombok.Builder;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.concurrent.atomic.AtomicReference;
 

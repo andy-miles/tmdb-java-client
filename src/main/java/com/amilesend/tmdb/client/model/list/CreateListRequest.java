@@ -18,6 +18,7 @@
 package com.amilesend.tmdb.client.model.list;
 
 import com.amilesend.client.parse.strategy.GsonExclude;
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.BodyBasedRequest;
 import com.amilesend.tmdb.client.model.BodyParameter;
 import com.amilesend.tmdb.client.model.QueryParameter;
@@ -26,7 +27,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -60,7 +60,6 @@ public class CreateListRequest implements BodyBasedRequest, SessionBasedRequest 
         Validate.notBlank(name, "name must not be blank");
         Validate.notBlank(description, "description must not be blank");
         Validate.notBlank(language, "language must not be blank");
-
 
         return urlBuilder.addQueryParameter("session_id", URLEncoder.encode(sessionId, StandardCharsets.UTF_8));
     }

@@ -18,9 +18,9 @@
 package com.amilesend.tmdb.client.connection.auth;
 
 import com.amilesend.client.connection.auth.AuthInfo;
+import com.amilesend.client.util.StringUtils;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Optional;
 

@@ -17,8 +17,10 @@
  */
 package com.amilesend.tmdb.client.connection.auth;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.io.CharStreams;
+import com.amilesend.client.util.Pair;
+import com.amilesend.client.util.StringUtils;
+import com.amilesend.client.util.Validate;
+import com.amilesend.client.util.VisibleForTesting;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -28,17 +30,16 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
-import org.apache.commons.lang3.tuple.Pair;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
@@ -186,12 +187,15 @@ public class RequestTokenGrantCallback implements HttpHandler {
         }
     }
 
-    private static String getLandingHtml(final String resourcePath) {
-        try (final BufferedReader reader = new BufferedReader(new InputStreamReader
-                (RequestTokenGrantCallback.class.getResourceAsStream(resourcePath), StandardCharsets.UTF_8))) {
-            return CharStreams.toString(reader);
-        } catch (final IOException ex) {
-            log.warn("Error trying to load resource: {}", resourcePath);
+    private static String getLandingHtml(final String resourcePathStr) {
+        try {
+            final Path resourcePath = Paths.get(RequestTokenGrantCallback.class
+                    .getClassLoader()
+                    .getResource(resourcePathStr)
+                    .toURI());
+            return Files.readString(resourcePath);
+        } catch (final IOException | URISyntaxException | NullPointerException ex) {
+            log.warn("Error trying to load resource: {}", resourcePathStr);
             return LANDING_HTML_FALLBACK;
         }
     }

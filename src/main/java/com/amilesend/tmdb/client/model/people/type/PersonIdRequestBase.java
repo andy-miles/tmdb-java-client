@@ -17,12 +17,12 @@
  */
 package com.amilesend.tmdb.client.model.people.type;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Defines the base class for a request that requires the person identifier.

@@ -17,10 +17,9 @@
  */
 package com.amilesend.tmdb.client.model.trending.type;
 
-import com.google.common.collect.ImmutableMap;
+import com.amilesend.client.util.Validate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.lang3.Validate;
 
 import java.util.Map;
 
@@ -33,7 +32,7 @@ public enum TimeWindow {
     /** Time window limited to this week only. */
     WEEK("week");
 
-    private static final Map<String, TimeWindow> VALUE_TO_TIME_WINDOW = ImmutableMap.of(
+    private static final Map<String, TimeWindow> VALUE_TO_TIME_WINDOW = Map.of(
             "day", DAY,
             "week", WEEK);
 

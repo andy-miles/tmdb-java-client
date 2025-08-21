@@ -17,13 +17,13 @@
  */
 package com.amilesend.tmdb.client.model.search.type;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.QueryParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.experimental.SuperBuilder;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;

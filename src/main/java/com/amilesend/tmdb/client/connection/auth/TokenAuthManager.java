@@ -22,7 +22,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import okhttp3.Request;
 
-import static com.google.common.net.HttpHeaders.AUTHORIZATION;
+import static com.amilesend.client.connection.Connection.Headers.AUTHORIZATION;
 
 /**
  * Authorization manager for read access tokens.

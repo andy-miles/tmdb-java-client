@@ -17,13 +17,12 @@
  */
 package com.amilesend.tmdb.client.model.search.type;
 
-import com.google.common.collect.ImmutableMap;
+import com.amilesend.client.util.Validate;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.lang3.Validate;
 
 import java.util.Map;
 
@@ -39,7 +38,7 @@ public enum MediaType {
 
     public static final String MEDIA_TYPE_OBJ_NAME = "media_type";
 
-    private static final Map<String, MediaType> VALUE_TO_MEDIA_TYPE = ImmutableMap.of(
+    private static final Map<String, MediaType> VALUE_TO_MEDIA_TYPE = Map.of(
             "movie", MOVIE,
             "person", PERSON,
             "tv", TV,

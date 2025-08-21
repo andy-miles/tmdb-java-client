@@ -18,12 +18,12 @@
 package com.amilesend.tmdb.client.model.tv.series.type;
 
 import com.amilesend.client.parse.strategy.GsonExclude;
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * The base class for TV series API based requests.

@@ -17,12 +17,12 @@
  */
 package com.amilesend.tmdb.client.model.auth;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.BodyBasedRequest;
 import com.amilesend.tmdb.client.model.BodyParameter;
 import lombok.Builder;
 import lombok.Data;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * The request made to create a new session.

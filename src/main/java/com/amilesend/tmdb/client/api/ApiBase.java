@@ -19,6 +19,7 @@ package com.amilesend.tmdb.client.api;
 
 import com.amilesend.client.connection.Connection;
 import com.amilesend.client.parse.parser.BasicParser;
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.BodyBasedRequest;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
 import com.amilesend.tmdb.client.parse.GsonFactory;
@@ -28,7 +29,6 @@ import lombok.RequiredArgsConstructor;
 import okhttp3.HttpUrl;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import org.apache.commons.lang3.Validate;
 
 import static com.amilesend.client.connection.Connection.JSON_MEDIA_TYPE;
 

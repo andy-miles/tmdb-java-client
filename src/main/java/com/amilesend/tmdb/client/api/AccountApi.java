@@ -18,6 +18,7 @@
 package com.amilesend.tmdb.client.api;
 
 import com.amilesend.client.connection.Connection;
+import com.amilesend.client.util.StringUtils;
 import com.amilesend.tmdb.client.model.acount.AddFavoriteRequest;
 import com.amilesend.tmdb.client.model.acount.AddFavoriteResponse;
 import com.amilesend.tmdb.client.model.acount.AddWatchlistRequest;
@@ -43,7 +44,6 @@ import com.amilesend.tmdb.client.model.acount.GetWatchlistTvRequest;
 import com.amilesend.tmdb.client.model.acount.GetWatchlistTvResponse;
 import com.amilesend.tmdb.client.model.acount.type.AccountBasedRequest;
 import lombok.NonNull;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * Defines APIs to access user account information.  Note: A valid session must be authenticated and obtained.  This

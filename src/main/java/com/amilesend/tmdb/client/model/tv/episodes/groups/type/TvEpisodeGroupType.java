@@ -17,7 +17,6 @@
  */
 package com.amilesend.tmdb.client.model.tv.episodes.groups.type;
 
-import com.google.common.collect.ImmutableMap;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -35,7 +34,7 @@ public enum TvEpisodeGroupType {
     PRODUCTION(6, "Production"),
     TV(7, "TV");
 
-    private static final Map<Integer, TvEpisodeGroupType> TYPE_TO_ENUM = ImmutableMap.of(
+    private static final Map<Integer, TvEpisodeGroupType> TYPE_TO_ENUM = Map.of(
             1, ORIGINAL_AIR_DATE,
             2, ABSOLUTE,
             3, DVD,

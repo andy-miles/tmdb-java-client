@@ -17,7 +17,6 @@
  */
 package com.amilesend.tmdb.client.model.find.type;
 
-import com.google.common.collect.ImmutableMap;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -44,7 +43,7 @@ public enum ExternalSource {
     /** Youtube identifier. */
     YOUTUBE("youtube_id");
 
-    private static final Map<String, ExternalSource> VALUE_TO_EXTERNAL_SOURCE = ImmutableMap.of(
+    private static final Map<String, ExternalSource> VALUE_TO_EXTERNAL_SOURCE = Map.of(
             "imdb_id", IMDB,
             "facebook_id", FACEBOOK,
             "instagram_id", INSTAGRAM,

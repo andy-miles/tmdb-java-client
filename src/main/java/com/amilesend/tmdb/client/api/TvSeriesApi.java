@@ -18,6 +18,7 @@
 package com.amilesend.tmdb.client.api;
 
 import com.amilesend.client.connection.Connection;
+import com.amilesend.client.util.StringUtils;
 import com.amilesend.tmdb.client.model.tv.series.AddRatingRequest;
 import com.amilesend.tmdb.client.model.tv.series.AddRatingResponse;
 import com.amilesend.tmdb.client.model.tv.series.DeleteRatingRequest;
@@ -62,7 +63,6 @@ import com.amilesend.tmdb.client.model.tv.series.GetWatchProvidersRequest;
 import com.amilesend.tmdb.client.model.tv.series.GetWatchProvidersResponse;
 import com.amilesend.tmdb.client.model.tv.series.type.SeriesRequestBase;
 import lombok.NonNull;
-import org.apache.commons.lang3.StringUtils;
 
 /** TMDB TV Series API. */
 public class TvSeriesApi extends ApiBase {

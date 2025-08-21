@@ -17,6 +17,7 @@
  */
 package com.amilesend.tmdb.client.model.list;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.BodyBasedRequest;
 import com.amilesend.tmdb.client.model.BodyParameter;
 import com.amilesend.tmdb.client.model.list.type.ListRequestBase;
@@ -26,7 +27,6 @@ import lombok.NonNull;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * The request to add a movie to a list.

@@ -18,6 +18,7 @@
 package com.amilesend.tmdb.client.model.acount;
 
 import com.amilesend.client.parse.strategy.GsonExclude;
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.BodyBasedRequest;
 import com.amilesend.tmdb.client.model.BodyParameter;
 import com.amilesend.tmdb.client.model.PathParameter;
@@ -28,7 +29,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Defines the attributes when adding or removing a favorite for an account.

@@ -18,6 +18,7 @@
 package com.amilesend.tmdb.client.api;
 
 import com.amilesend.client.connection.Connection;
+import com.amilesend.client.util.StringUtils;
 import com.amilesend.tmdb.client.model.people.GetChangesRequest;
 import com.amilesend.tmdb.client.model.people.GetChangesResponse;
 import com.amilesend.tmdb.client.model.people.GetCombinedCreditsRequest;
@@ -37,7 +38,6 @@ import com.amilesend.tmdb.client.model.people.GetTvCreditsRequest;
 import com.amilesend.tmdb.client.model.people.GetTvCreditsResponse;
 import com.amilesend.tmdb.client.model.people.type.PersonIdRequestBase;
 import lombok.NonNull;
-import org.apache.commons.lang3.StringUtils;
 
 /** TMDB People API. */
 public class PeopleApi extends ApiBase {

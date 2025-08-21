@@ -17,6 +17,7 @@
  */
 package com.amilesend.tmdb.client.model.find;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.QueryParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
@@ -25,7 +26,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;

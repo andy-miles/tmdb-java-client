@@ -17,13 +17,13 @@
  */
 package com.amilesend.tmdb.client.model.company.type;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.PathParameter;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.experimental.SuperBuilder;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Base class for requests that pertain to companies.

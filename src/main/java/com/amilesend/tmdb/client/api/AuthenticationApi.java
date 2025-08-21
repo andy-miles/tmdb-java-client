@@ -18,6 +18,7 @@
 package com.amilesend.tmdb.client.api;
 
 import com.amilesend.client.connection.Connection;
+import com.amilesend.client.util.StringUtils;
 import com.amilesend.tmdb.client.model.auth.CreateGuestSessionResponse;
 import com.amilesend.tmdb.client.model.auth.CreateRequestTokenResponse;
 import com.amilesend.tmdb.client.model.auth.CreateSessionRequest;
@@ -26,7 +27,6 @@ import com.amilesend.tmdb.client.model.auth.DeleteSessionRequest;
 import com.amilesend.tmdb.client.model.auth.DeleteSessionResponse;
 import com.amilesend.tmdb.client.model.auth.ValidateKeyResponse;
 import lombok.NonNull;
-import org.apache.commons.lang3.StringUtils;
 
 /** TMDB Authentication API. */
 public class AuthenticationApi extends ApiBase {

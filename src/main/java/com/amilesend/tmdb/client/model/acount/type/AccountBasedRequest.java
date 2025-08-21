@@ -17,8 +17,8 @@
  */
 package com.amilesend.tmdb.client.model.acount.type;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Interface that signifies that a request requires an account identifier.

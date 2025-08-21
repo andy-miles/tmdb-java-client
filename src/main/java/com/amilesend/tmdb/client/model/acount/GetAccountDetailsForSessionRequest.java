@@ -17,13 +17,13 @@
  */
 package com.amilesend.tmdb.client.model.acount;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.QueryParameter;
 import com.amilesend.tmdb.client.model.SessionBasedRequest;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
 import okhttp3.HttpUrl;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Defines a request to retrieve account details associated with a session.

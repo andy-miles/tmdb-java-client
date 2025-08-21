@@ -17,8 +17,8 @@
  */
 package com.amilesend.tmdb.client.model.collection.type;
 
+import com.amilesend.client.util.Validate;
 import com.amilesend.tmdb.client.model.QueryParameterBasedRequest;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Interface for a request that is specific to a collection.
