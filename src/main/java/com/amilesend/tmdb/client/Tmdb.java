@@ -61,7 +61,7 @@ import okhttp3.OkHttpClient;
  */
 public class Tmdb {
     public static final String API_URL = "https://api.themoviedb.org/3";
-    public static final String USER_AGENT = "TMDBJavaClient/3.3";
+    public static final String USER_AGENT = "TMDBJavaClient/3.4";
 
     @Getter
     private final Connection connection;

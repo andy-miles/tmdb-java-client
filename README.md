@@ -85,15 +85,36 @@ requires these APIs.
    <dependency>
        <groupId>com.amilesend</groupId>
        <artifactId>tmdb-java-client</artifactId>
-       <version>3.3.5</version>
+       <version>3.4</version>
    </dependency>
    ```
 3. Instantiate the client with the read access token:
 
+   Default:
    ```java
    Tmdb tmdb = new Tmdb("MyReadAccessToken", "MyUserAgent/1.0");
    // Access APIs (e.g., MoviesApi)
    MoviesApi moviesApi = tmdb.getMoviesApi();
+   ```
+
+   With a RetryStrategy:
+   ```Java
+   Tmdb tmdb = new Tmdb(new DefaultConnectionBuilder()
+        .userAgent("MyUserAgent/1.0")
+        .baseUrl(Tmdb.API_URL)
+        .httpClient(new OkHttpClient.Builder().build())
+        .authManager(new TokenAuthManager(new TokenAuthInfo("MyReadAccessToken")))
+        .gsonFactory(new GsonFactory())
+        .isGzipContentEncodingEnabled(false)
+        // Options are ExponentialDelayRetryStrategy, FixedDelayRetryStrategy
+        // or NoRetryStrategy (default).
+        .retryStrategy(ExponentialDelayRetryStrategy.builder()
+                .baseDelayMs(500L)
+                .maxJitterMs(100L)
+                .maxAttempts(3)
+                .maxTotalDelayMs(2000L)
+                .build())
+        .build());
    ```
 
 <div align="right">(<a href="#readme-top">back to top</a>)</div>
