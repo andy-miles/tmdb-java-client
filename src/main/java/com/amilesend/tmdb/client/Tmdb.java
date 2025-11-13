@@ -19,6 +19,7 @@ package com.amilesend.tmdb.client;
 
 import com.amilesend.client.connection.Connection;
 import com.amilesend.client.connection.DefaultConnectionBuilder;
+import com.amilesend.client.connection.retry.NoRetryStrategy;
 import com.amilesend.tmdb.client.api.AccountApi;
 import com.amilesend.tmdb.client.api.AuthenticationApi;
 import com.amilesend.tmdb.client.api.CertificationsApi;
@@ -60,7 +61,7 @@ import okhttp3.OkHttpClient;
  */
 public class Tmdb {
     public static final String API_URL = "https://api.themoviedb.org/3";
-    public static final String USER_AGENT = "TMDBJavaClient/3.2";
+    public static final String USER_AGENT = "TMDBJavaClient/3.3";
 
     @Getter
     private final Connection connection;
@@ -89,6 +90,7 @@ public class Tmdb {
                 .authManager(new TokenAuthManager(authInfo))
                 .gsonFactory(new GsonFactory())
                 .isGzipContentEncodingEnabled(false)
+                .retryStrategy(new NoRetryStrategy())
                 .build();
     }
 

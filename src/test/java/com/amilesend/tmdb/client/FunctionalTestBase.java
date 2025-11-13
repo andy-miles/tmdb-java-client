@@ -18,7 +18,9 @@
 package com.amilesend.tmdb.client;
 
 import com.amilesend.client.connection.Connection;
+import com.amilesend.client.connection.DefaultConnectionBuilder;
 import com.amilesend.client.connection.http.OkHttpClientBuilder;
+import com.amilesend.client.connection.retry.ExponentialDelayRetryStrategy;
 import com.amilesend.tmdb.client.connection.auth.TokenAuthInfo;
 import com.amilesend.tmdb.client.connection.auth.TokenAuthManager;
 import com.amilesend.tmdb.client.data.SerializedResource;
@@ -83,7 +85,7 @@ public class FunctionalTestBase {
     }
 
     private void setUpTMDB() {
-        connection = Connection.builder()
+        connection = new DefaultConnectionBuilder()
                 .baseUrl(getMockWebServerUrl())
                 .gsonFactory(new GsonFactory())
                 .httpClient(httpClient)
