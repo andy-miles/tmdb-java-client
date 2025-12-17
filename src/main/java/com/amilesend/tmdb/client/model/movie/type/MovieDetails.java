@@ -81,7 +81,7 @@ public class MovieDetails extends Resource<Integer, MovieDetails> {
     /** The release date. */
     private final LocalDate releaseDate;
     /** The movie revenue. */
-    private final int revenue;
+    private final long revenue;
     /** The movie runtime (in minutes). */
     private final int runtime;
     /** The list of available spoken languages that are available for the movie (original and dubs). */
