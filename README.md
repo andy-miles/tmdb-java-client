@@ -85,7 +85,7 @@ requires these APIs.
    <dependency>
        <groupId>com.amilesend</groupId>
        <artifactId>tmdb-java-client</artifactId>
-       <version>3.4.5</version>
+       <version>3.4.6</version>
    </dependency>
    ```
 3. Instantiate the client with the read access token:
